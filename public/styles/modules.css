@@ -24,13 +24,23 @@ h1{
     width:100%;
 }
 
+#header h1{
+    line-height: 100px;
+}
+
+#header h2{
+    color: #7F92B3;
+    font-size: 1.5em;
+    text-emphasis: black;
+}
+
 
 
 .calendar{
-    color:white;
+    color:#8E205E;
     text-decoration: underline;
-    margin-right: 2em;
-    margin-left: 50em;
+    margin-right: 1em;
+    margin-left: 70%;
     line-height: 6em;
     display: inline;
     right: 8em;
@@ -38,9 +48,9 @@ h1{
 }
 
 .resources{
-    color:white;
+    color:#8E205E;
     text-decoration: underline;
-    margin-right: 2em;
+    margin-right: 1em;
     line-height: 6em;
     display: inline;
 }
