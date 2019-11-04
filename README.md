@@ -1,5 +1,5 @@
 
-Will, Lucas, Raven and Roslayn
+Will, Lucas, Raven and Rosalyn
 
 
 
@@ -15,7 +15,7 @@ Will, Lucas, Raven and Roslayn
 ### resource
 ![resource](https://github.com/301d52-jblm/jblm/blob/willday1/images_for_readme/wire-frame/jblm-resource.jpg)
 
-#User Stories
+# User Stories
 
 <!-- 
 Facebook Feed
@@ -43,7 +43,7 @@ Add a 3-section under the carousel containing Calendar, Events, and Contacts sec
 Simplify calendar information
  -->
 
-#Software Requirements
+# Software Requirements
 
 <!-- VISION -->
 <!-- This product is meant to help the administrator and the visitors of the page alike. There is currently a divide in what users see vs what is available. This product will bridge that gap making it easy for users to get connected. This is important because it saves time, money and resources for our client. -->
@@ -89,17 +89,18 @@ Usability so users can easily manuever the cite. Usability means that it is easy
 <!-- DATA FLOW -->
 <!-- When a user comes to the cite they will see a navbar with an image carousal beneath it. under that there will be a facebook feed, calender/calender  events and contacts. You can click on the facebook feed and be on the facebook page. Click on the calender information and go to the full screen calender. Or click on the resources to see the full list of resources. All of these pages are also accessible by using the var bar which will be on each page. -->
 
-#Domain Modeling
+# Domain Modeling
+![domain-modeling](https://github.com/301d52-jblm/jblm/blob/willday1/images_for_readme/domain-modeling.jpg)
 
-#Database Entity-Relationship-Diagram
-
-
-
-
+# Database Entity-Relationship-Diagram
+![database-diagram](https://github.com/301d52-jblm/jblm/blob/willday1/images_for_readme/database-diagram.jpg)
 
 
 
------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ##
 placeholder for dev branch ACP

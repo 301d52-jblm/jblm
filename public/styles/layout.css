@@ -111,8 +111,9 @@ iframe{
     
     /* Elle fixing aspect ratio  found here: https://www.geeksforgeeks.org/maintain-the-aspect-ratio-of-a-div-with-css/ */
     position: relative; 
-        width: 100%; 
+        width: 70%; 
         padding-top: 56.25%; /* 16:9 Aspect Ratio */ 
+        margin: auto;
     
   }
   
