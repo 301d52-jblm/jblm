@@ -10,22 +10,25 @@
     <a class="resources" href="/resources">Resources</a>
   </section>
 
-  <div id="slideshow">
-    <div><img src="/assets/Hawk1Cropped.jpg"></div>
-    <div><img src="/assets/Hawk2Cropped.jpg"></div>
-    <div><img src="/assets/Hawk3Cropped.jpg"></div>
-    <div><img src="/assets/Hawk4Cropped.jpg"></div>
-    <div><img src="/assets/Hawk5Cropped.jpg"></div>
-    <div><img src="/assets/Hawk6Cropped.jpg"></div>
-    <div><img src="/assets/Hawk7Cropped.jpg"></div>
-    <div><img src="/assets/Hawk8Cropped.jpg"></div>
-    <div><img src="/assets/hawk9Cropped.jpg"></div>
-    <div><img src="/assets/Hawk10Cropped.jpg"></div>
-    <div><img src="/assets/Hawk11Cropped.jpg"></div>
-    <div><img src="/assets/Hawk12Cropped.jpg"></div>
-    <div><img src="/assets/Hawk13Cropped.jpg"></div>
-  </div>
-
+  <section id="carouselBox" class="carousel-box">
+    <div><div id="arrowLeft"></div></div>
+    <div class="carousel-main">
+      <img class="" src="/assets/Hawk1Cropped.jpg">
+      <img class="hide" src="/assets/Hawk2Cropped.jpg">
+      <img class="hide" src="/assets/Hawk3Cropped.jpg">
+      <img class="hide" src="/assets/Hawk4Cropped.jpg">
+      <img class="hide" src="/assets/Hawk5Cropped.jpg">
+      <img class="hide" src="/assets/Hawk6Cropped.jpg">
+      <img class="hide" src="/assets/Hawk7Cropped.jpg">
+      <img class="hide" src="/assets/Hawk8Cropped.jpg">
+      <img class="hide" src="/assets/hawk9Cropped.jpg">
+      <img class="hide" src="/assets/Hawk10Cropped.jpg">
+      <img class="hide" src="/assets/Hawk11Cropped.jpg">
+      <img class="hide" src="/assets/Hawk12Cropped.jpg">
+      <img class="hide" src="/assets/Hawk13Cropped.jpg">
+    </div>
+    <div><div id="arrowRight"></div></div>
+  </section>
   <%- include('../partials/upcoming') %>
 
   <section class="gridlock">
@@ -49,5 +52,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="/js/app.js"></script>
   <script src="/js/index.js"></script>
+  <script src="/js/carousel.js"></script>
 </body>
 </html>
