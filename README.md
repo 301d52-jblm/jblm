@@ -1,8 +1,35 @@
+Will, Lucas, Raven and Roslayn
+
 #Wire Fames
 
 
 #User Stories
 
+<!-- 
+Facebook Feed
+  As a user, I want to see the JBLM Facebook feed, so that website visitors can see what’s going on with the organization.
+    Feature Tasks:
+      Add a call to the FB API to get the page feed and model it to render it on the page.
+      Alternatively, embed the facebook page’s feed directly in the HTML.
+    Acceptance Tests: 
+      When the user visits the home page, they should see the latest posts from the JBLM facebook timeline.
+Admin Route
+As an administrator, I want a hidden administrator route, so that I can edit the calendar.
+    Feature Tasks:
+      Create routes with random letters/numbers for the names, so that they are hard to guess.
+      These routes direct to a page where the calendar data in the database can be updated.
+    Acceptance Tests:
+      An admin with knowledge of the admin route name should be able to use that route to visit a page that allows the calendar DB data to be edited.
+Redesign home page
+As a user, I want to know all the site has to offer at a glance so that I can feel included.
+    Feature Tasks:
+      Reduce the size of the image carousel
+Add a 3-section under the carousel containing Calendar, Events, and Contacts sections.
+    Use UW-Tacoma site as a reference.
+    Acceptance Tests:
+      The home page should display events, contacts, and calendar information in a way that is easy to read and navigate. It should look similar to https://www.tacoma.uw.edu/.
+Simplify calendar information
+ -->
 
 #Software Requirments
 
