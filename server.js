@@ -46,7 +46,6 @@ app.set('view engine', 'ejs');
 // render the Home page
 app.get('/', getHome);
 app.get('/upcoming/:count', getUpcoming);
-app.get('/nytimes/news', getNews);
 // render the Calendar page that shows a Google Calendar API
 app.get('/calendar', getCalendar);
 // render the Resource page
@@ -101,36 +100,6 @@ function getUpcoming(req, res) {
   let eventList = GCA.getEventList();
   console.log('The current event list: \n', eventList);
   res.send(eventList);
-}
-
-function getNews(req, res) {
-  let newsURL = `https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=${process.env.NYTIMES_API_KEY}`;
-  superagent.get(newsURL)
-    .then(newsResults => {
-      const newsParse = JSON.parse(newsResults.text);
-      let newsArray = [];
-      if (newsParse.results.length > 5) {
-        for (let i = 0; i < 5; i++) {
-          const title = newsParse.results[i].title;
-          const updated = newsParse.results[i].updated;
-          const abstract = newsParse.results[i].abstract;
-          const url = newsParse.results[i].url;
-          const newNews = new NYNews(title, updated, abstract, url);
-          newsArray.push(newNews);
-        }
-      } else {
-        for (let i = 0; i < newsParse.results.length; i++) {
-          const title = newsParse.results[i].title;
-          const updated = newsParse.results[i].updated;
-          const abstract = newsParse.results[i].abstract;
-          const url = newsParse.results[i].url;
-          const newNews = new NYNews(title, updated, abstract, url);
-          newsArray.push(newNews);
-        }
-      }
-      res.send(newsArray);
-    })
-    .catch(err => handleError(err, res));
 }
 
 function getCalendar(req, res) {
