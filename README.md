@@ -3,8 +3,8 @@ Will, Lucas, Raven and Roslayn
 
 
 
-#Wire Fames
-
+# Wire Fames
+![index-v1](https://github.com/301d52-jblm/jblm/blob/willday1/images_for_readme/wire-frame/jblm-index-v1.jpg)
 
 #User Stories
 
