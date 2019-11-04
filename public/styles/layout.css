@@ -2,6 +2,11 @@
 body{
     background: white;
     font-family: 'Jomolhari', serif;
+  
+}
+
+#header{
+    width: 100%;
 }
 
 
