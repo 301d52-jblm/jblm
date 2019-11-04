@@ -34,10 +34,10 @@ Add a 3-section under the carousel containing Calendar, Events, and Contacts sec
 Simplify calendar information
  -->
 
-#Software Requirments
+#Software Requirements
 
 <!-- VISION -->
-<!-- This product is meant to help the administrator and the visitors of the page alike. There is currently a divide in what users see vs what is available. This product will bridge that gap making it easy for users to get connected. This is important because it saves time, money and resorces for our client. -->
+<!-- This product is meant to help the administrator and the visitors of the page alike. There is currently a divide in what users see vs what is available. This product will bridge that gap making it easy for users to get connected. This is important because it saves time, money and resources for our client. -->
 
 
 
@@ -73,7 +73,7 @@ A User can view the calender and facebook feed along with other information abou
 <!-- NON-FUNCTIONAL REQUIREMENTS -->
 <!-- Secure for the admin route so only those who have the link can change the calender. This means that the admin will be able to keep the calender the way they want it. Secure means that it will not be reachable by users. It will be a route that ONLY the admin will have a link to.
 
-Usability so users can easily manuver the cite. Usability means that it is easy for people who have never been on the cite to know what all the features are right away. We want this cite to be for everyone interested in JBLM events. -->
+Usability so users can easily manuever the cite. Usability means that it is easy for people who have never been on the cite to know what all the features are right away. We want this cite to be for everyone interested in JBLM events. -->
 
 
 
