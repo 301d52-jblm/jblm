@@ -8,17 +8,9 @@ body{
 #header{
     width: 100%;
     margin:auto;
-    height:9em;
+    height:11em;
 }
 
-
-#header > #logoimg{
-    width:10%;
-    margin:auto;
-    margin-top:1%;
-    margin-left: 3%;
-    float: left;
-}
 
 
 /* calendar */
