@@ -10,8 +10,8 @@
       <% resource.forEach(partner => { %>
         <li>
           <h5 class="rr rt">	&#9830;<%= partner.title %></h5>
-          <p class="rr dt"><%= partner.description %></p>
           <a class="rr" href="<%= partner.resource_url %>">Resource link</a>
+          <p class="rr dt"><%= partner.description %></p>
           <!-- <a id="pdf" href="/pdf">PDF</a> -->
         </li>
       <% }) %>
