@@ -10,7 +10,7 @@
       <% resource.forEach(partner => { %>
         <li>
           <img src="<%= partner.logo_png %>">
-          <h5>Title: <%= partner.title %></h5>
+          <h5>&#9830;<%= partner.title %></h5>
           <p><%= partner.description %></p>
           <a href="<%= partner.resource_url %>">Resource page</a></br></br>
 
@@ -24,8 +24,8 @@
           </form>
         </li>
       <% }) %>
-    </ul>
-    <a href="/<%= adminRoute %>">Admin Page</a>
+    </ul></br></br></br>
+    <a href="/<%= adminRoute %>">Back to admin page</a>
   </main>
   <section></section>
   <%- include('../../partials/footer') %>
