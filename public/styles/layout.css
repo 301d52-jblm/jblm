@@ -2,13 +2,15 @@ body{
     background: white;
     font-family: 'Jomolhari', serif;
 }
-#header{
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    margin:auto;
-    height:11em;
+    background:linear-gradient(218.02deg, rgb(172, 163, 162) 0%, rgb(12, 49, 56) 90%);
+    padding: 1em;
 }
-
-
 
 /* calendar */
 iframe{
