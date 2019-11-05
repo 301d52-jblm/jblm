@@ -58,6 +58,8 @@ app.get('/email', getEmailLink);
 
 app.get('/pdf', testPDF);
 
+app.get('/response', getResponse);
+
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
 const adminRoute = process.env.ADMIN_ROUTE;
@@ -102,6 +104,10 @@ function getUpcoming(req, res) {
   let eventList = GCA.getEventList();
   console.log('The current event list: \n', eventList);
   res.send(eventList);
+}
+
+function getResponse(req, res) {
+  res.render('pages/response');
 }
 
 function getCalendar(req, res) {
