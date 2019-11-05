@@ -235,6 +235,7 @@ color: black;
 
 form{
     text-align: center;
+    
 }
 
 legend{
@@ -245,6 +246,19 @@ button{
     margin-top: 1em;
     margin-left: 50em;
     margin-bottom: 30em;
+    margin:auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+input{
+    margin:1%;
+    border: 1px solid black;
+    
+}
+
+.adminList{
+    max-width:750px;
+    margin:auto;
 }
 
 
