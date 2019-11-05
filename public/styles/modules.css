@@ -49,7 +49,6 @@ header nav a:hover {
     max-width:750px;
     margin:auto;
 }
-<<<<<<< HEAD
 
 #editPartial{
     visibility:hidden;
@@ -117,8 +116,9 @@ h4{
 
 }
 
-=======
->>>>>>> 4a6ce89013ccf29ae2fbe799624eb95c406a06ef
+.resourcePage{
+    padding:5%;
+}
 
 #event-request-form {
     width: 100px;
