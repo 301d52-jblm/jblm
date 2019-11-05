@@ -13,6 +13,13 @@ h1{
     font-weight: bold;
 }
 
+<<<<<<< HEAD
+=======
+h2 {
+    color: #7F92B3;
+    font-size: 1.4em;
+}
+>>>>>>> a09d93ee317e2957781de7808a48bc3b031b4403
 /* background from: https://www.duda.co/blog/11-tips-designing-great-website-headers/ */
 header div:first-child{
     flex: 0 0 10%;
@@ -38,7 +45,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: whitesmoke;
+    color: #8E205E;
 }
 
 
