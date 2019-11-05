@@ -6,7 +6,6 @@
     height: 3em;
     line-height: 3em;
 }
-
 h1{
     color: white;
     font-family: 'Jomolhari', serif; 
@@ -15,18 +14,12 @@ h1{
     margin-left: 3em;
     font-weight: bold;
 }
-
-
-
 /* background from: https://www.duda.co/blog/11-tips-designing-great-website-headers/ */
 #header{
     background:linear-gradient(218.02deg, rgb(8, 33, 255) 0%,rgb(255, 255, 255), rgb(255, 39, 1) 90%);
     height: 6em;
     width:100%;
 }
-
-
-
 .calendar{
     color:white;
     /* float: right; */
@@ -40,7 +33,6 @@ h1{
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
     /* opacity: .5; */
 }
-
 .resources{
     color:white;
     /* float: right; */
@@ -52,31 +44,13 @@ h1{
     /* right: 1em; */
     /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";; */
     /* opacity: .5; */
-    
 }
-
 .resources:hover{
 color: black;
 }
-
 .calendar:hover{
     color:black;
 }
-
-
-h1{
-    color: white;
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-size: 2em;
-    display: inline;
-    margin-left: 3em;
-    font-weight: bold;
-}
-
-
-
-
-
 /* footer */
 footer{
     background:linear-gradient(218.02deg, rgb(8, 33, 255) 0%,rgb(255, 255, 255), rgb(240, 39, 4) 90%);
@@ -96,12 +70,8 @@ footer{
     margin-top: .25em;
     margin-left: .25em;
     /* margin-bottom: 1em; */
-
-
     /* margin-right:-15em; */
-
 }
-
 /* home tab on calendar page  */
 #home2{
     color:white;
@@ -116,7 +86,6 @@ footer{
     /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";; */
     /* opacity: .5; */
 }
-
 #resources2{
     color:white;
     /* float: right; */
@@ -128,19 +97,13 @@ footer{
     /* right: 1em; */
     /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";; */
     /* opacity: .5; */
-    
 }
-
 #resources2:hover{
 color: black;
 }
-
 #home2:hover{
     color:black;
 }
-
-
-
 .calendar3{
     color:white;
     /* float: right; */
@@ -153,11 +116,9 @@ color: black;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
     /* opacity: .5; */
 }
-
 .calendar3:hover{
     color:black;
 }
-
 .home3{
     color:white;
     /* float: right; */
@@ -171,11 +132,9 @@ color: black;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
     /* opacity: .5; */
 }
-
 .home3:hover{
     color:black;
 }
-
 #resources5{
     color:white;
     /* float: right; */
@@ -187,42 +146,28 @@ color: black;
     /* right: 1em; */
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
     /* opacity: .5; */
-    
 }
-
 #resources5:hover{
 color: black;
 }
-
-
-
-
 #admin{
     text-align: center;
     margin-top:1em;
     margin-bottom: 2em;
     font-size: 2em;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-
 }
-
-
 form{
     text-align: center;
 }
-
 legend{
     margin-bottom: .75em;
 }
-
 button{
     margin-top: 1em;
     margin-left: 50em;
     margin-bottom: 30em;
 }
-
-
-
 h4{
     text-align: center;
     margin-top:.75em;
@@ -233,20 +178,51 @@ h4{
     margin-left: 5em;
     /* margin-right: 5em; */
 }
-
 .rt{
     margin-top:5em;
     /* margin-right: 5em; */
-
 }
-
 .dt{
     margin-right: 5em;
 }
-
 #pdf{
     margin-left: 1em;
 }
 
+@media (max-width: 959px) {
+    
+    /* because the iframes are rendered in an inline-element, use text-align center instead of margin auto */
+    .three-section-contents {
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.425);
+    }
+}
 
+@media (min-width: 960px) {
+    iframe {
+        margin: auto;
+    }
+    #three-section-main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    #left-section, #middle-section {
+        border-right: 1px solid black;
+    }
+    .three-section-contents {
+        padding: 10px;
+        height: 100%;
+        text-align: center;
+    }
+    .three-section {
+        width: 33.3%;
+    }
+    .fb-page {
+    margin: auto;
+    }
 
+}
