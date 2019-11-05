@@ -8,6 +8,7 @@ const superagent = require('superagent');
 const methodOverride = require('method-override');
 const readline = require('readline');
 const {google} = require('googleapis');
+const nodemailer = require('nodemailer');
 
 const googleCalendarAPI = require('./googleapi');
 const GCA = new googleCalendarAPI();
@@ -58,7 +59,11 @@ app.get('/email', getEmailLink);
 
 app.get('/pdf', testPDF);
 
+
 app.get('/response', getResponse);
+
+app.post('/calendar', sendEventEmail);
+
 
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
@@ -261,6 +266,36 @@ function testPDF(req, res) {
   res.send(data);
 }
 
+function sendEventEmail(request, response) {
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'jblm.visitor@gmail.com',
+      pass: 'codefellows'
+    }
+  });
+
+  let {requester, requesterEmail, requesterPhone, eventName, date, time, description} = request.body;
+  
+  var mailOptions = {
+    from: 'jblm.visitor@gmail.com',
+    //insert multiple email addresses in the following format
+    //`first@email.com;second@email.com;third@email.com`
+    to: `insert emails here using the above format`,
+    subject: 'Please add my event to the Hawk Career Center calendar',
+    text: `From: ${requester}\nEmail: ${requesterEmail}\nPhone Number: ${requesterPhone}\nEvent name: ${eventName}\nDate: ${date}\nTime: ${time}\nDescription: ${description}`
+  };
+  
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  //refresh the page after submitting:
+  response.redirect('/calendar');
+};
 
 // ========== Error Function ========== //
 function handleError(err, response) {
@@ -278,5 +313,8 @@ function handleError(err, response) {
   }
 }
 
+
+
+
 // ========== Listen on PORT ==========
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
