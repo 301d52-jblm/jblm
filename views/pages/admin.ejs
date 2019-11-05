@@ -15,18 +15,26 @@
       -->
       <fieldset>
         <legend>Add a Resource</legend>
+        <label for="logo_img">
+          <span>Logo link</span>
+          <input type="text" name="logo_img" value="" required>
+        </label></br>
         <label for="title">
-          <span>Resource Title</span>
+          <span>Name</span>
           <input type="text" name="title" value="" required>
         </label></br>
-        <label for="description">
-          <span>Description</span>
-          <input type="text" name="description" value="" style="height:30px;" required>
+        <label for="email">
+          <span>Email</span>
+          <input type="text" name="email" value="" required>
         </label></br>
         <label for="resource_url">
-          <span>Resource URL</span>
+          <span>URL</span>
           <input type="url" name="resource_url" value="">
-        </label></fieldset>
+        </label></br>
+          <label for="description" id='desc'>
+            <span>Description</span>
+            <input type="text" name="description" value="" style="height:100px;" required>
+          </label>
       </fieldset>
       <button type="submit">Add this resource</button>
     </form>

@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS jblm_unlimited_cf19;
-CREATE DATABASE jblm_unlimited_cf19;
-\c jblm_unlimited_cf19;
-
 
 DROP TABLE IF EXISTS event;
 CREATE TABLE event (
@@ -15,10 +11,12 @@ CREATE TABLE event (
 DROP TABLE IF EXISTS resource;
 CREATE TABLE resource (
   id SERIAL PRIMARY KEY,
-  title varchar(255),
-  description text,
+  logo_img bytea,
+  name varchar(255),
+  email varchar(255),
   resource_url varchar(255),
-  logo_png bytea
+  description text,
+  importance varchar(255)
 );
 
 DROP TABLE IF EXISTS resource_file;
