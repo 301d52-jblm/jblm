@@ -7,7 +7,7 @@ const pg = require('pg');
 const superagent = require('superagent');
 const methodOverride = require('method-override');
 const readline = require('readline');
-const {google} = require('googleapis');
+const { google } = require('googleapis');
 const nodemailer = require('nodemailer');
 
 const googleCalendarAPI = require('./googleapi');
@@ -59,7 +59,8 @@ app.get('/email', getEmailLink);
 
 app.get('/pdf', testPDF);
 
-app.post('/calendar', sendEventEmail);
+app.post('/eventsForm', sendEventEmail);
+app.post('/', sendResourcesEmail);
 
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
@@ -204,13 +205,13 @@ function getDeleteResourceView(req, res) {
 }
 
 function postNewResource(req, res) {
-/**
- * id SERIAL PRIMARY KEY,
- * title varchar(255),
- * description text,
- * resource_url varchar(255),
- * logo_png bytea
- */
+  /**
+   * id SERIAL PRIMARY KEY,
+   * title varchar(255),
+   * description text,
+   * resource_url varchar(255),
+   * logo_png bytea
+   */
 
   let {
     title,
@@ -267,18 +268,18 @@ function sendEventEmail(request, response) {
     }
   });
 
-  let {requester, requesterEmail, requesterPhone, eventName, date, time, description} = request.body;
-  
+  let { requester, requesterEmail, requesterPhone, eventName, date, time, description } = request.body;
+
   var mailOptions = {
     from: 'jblm.visitor@gmail.com',
     //insert multiple email addresses in the following format
     //`first@email.com;second@email.com;third@email.com`
-    to: `insert emails here using the above format`,
+    to: `lwilber92@gmail.com`,
     subject: 'Please add my event to the Hawk Career Center calendar',
     text: `From: ${requester}\nEmail: ${requesterEmail}\nPhone Number: ${requesterPhone}\nEvent name: ${eventName}\nDate: ${date}\nTime: ${time}\nDescription: ${description}`
   };
-  
-  transporter.sendMail(mailOptions, function(error, info){
+
+  transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
     } else {
@@ -288,6 +289,36 @@ function sendEventEmail(request, response) {
   //refresh the page after submitting:
   response.redirect('/calendar');
 };
+
+
+function sendResourcesEmail(request, response) {
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'jblm.visitor@gmail.com',
+      pass: 'codefellows'
+    }
+  });
+  let { name, email, phone, logoURL, siteURL, description } = request.body;
+
+  var mailOptions = {
+    from: 'jblm.visitor@gmail.com',
+    //insert multiple email addresses in the following format
+    //`first@email.com;second@email.com;third@email.com`
+    to: `lwilber92@gmail.com`,
+    subject: 'Please add me to your HAWK Career Center Resources.',
+    text: `From: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nLogo URL: ${logoURL}\nWebsite: ${siteURL}\nDescription: ${description}`
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
+
 
 // ========== Error Function ========== //
 function handleError(err, response) {
