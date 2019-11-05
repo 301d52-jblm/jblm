@@ -33,6 +33,11 @@ header, footer{
     border-left: 1px solid #777777;
 }
 
+.main-columns section:last-child{
+    text-align: left;
+    padding-left: 2em;
+}
+
 footer {
     padding: 4em;
     height: 20em;
