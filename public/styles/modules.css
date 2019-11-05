@@ -40,6 +40,11 @@ header nav a {
     color: whitesmoke;
 }
 
+header nav a:hover {
+    color: whitesmoke;
+}
+
+
 
 /* footer */
 footer{
