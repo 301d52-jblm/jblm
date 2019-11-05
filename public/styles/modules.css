@@ -192,9 +192,6 @@ h4{
 }
 
 @media (min-width: 960px) {
-    iframe {
-        margin: auto;
-    }
     #three-section-main {
         width: 100%;
         height: 100%;
