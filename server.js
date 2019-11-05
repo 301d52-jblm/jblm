@@ -132,7 +132,6 @@ function getAdminView(req, res) {
   client
     .query(sql)
     .then(sqlResults => {
-      // console.log('sql results', sqlResults.rows);
       res.render('pages/admin', {
         adminRoute: adminRoute,
         resource: sqlResults.rows
@@ -254,13 +253,6 @@ function testPDF(req, res) {
   res.send(data);
 }
 
-// ========== News Constructor Object ========== //
-function NYNews(title, updated, abstract, url) {
-  this.title = title;
-  this.updated = updated;
-  this.summary = abstract;
-  this.url = url;
-}
 
 // ========== Error Function ========== //
 function handleError(err, response) {
