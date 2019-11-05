@@ -1,16 +1,10 @@
 'use strict';
 
-// Credit: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
-$('#slideshow > div:gt(0)').hide();
+function init() {
+  loadData();
+  carouselInit();
+}
 
-setInterval(function() {
-  $('#slideshow > div:first')
-    .fadeOut(2000)
-    .next()
-    .fadeIn(2000)
-    .end()
-    .appendTo('#slideshow');
-}, 8000);
 
 function loadData() {
   $.get('/upcoming/5', calendarItems => {
@@ -34,27 +28,5 @@ function loadData() {
   });
 }
 
-function loadNews() {
-  $.get('/nytimes/news', newsArray => {
-    const section = $('#news');
-    newsArray.forEach(news => {
-      console.log('THIS IS NEWS ARRAY =====:', news);
-      let newsTitle = $('<h5></h5>');
-      newsTitle.text(news.title);
-      let newsUpdated = $('<p></p>');
-      newsUpdated.text(news.updated);
-      let newsAbstract = $('<p></p>');
-      newsAbstract.text(news.summary);
-      let newsLink = news.url;
-      let newsURL = $( `<a href="${newsLink}">See more about this news</a>`);
-      section.append(newsTitle);
-      section.append(newsUpdated);
-      section.append(newsAbstract);
-      section.append(newsURL);
-    });
-  });
-}
+$().ready(init);
 
-
-$().ready(loadData);
-$().ready(loadNews);

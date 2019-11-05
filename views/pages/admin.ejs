@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <%- include('../partials/head') %>
-
 <body>
-  <section id="header">
-    <h1>JBLM Unlimited</h1>
-    <a id="home2" href="/">Home</a>
-    <a class="calendar3" href="/calendar">Calendar</a>
-    <a id="resources5" href="/resources">Resources</a>
-  </section>
 
+  <%- include('../partials/header') %>
 
   <h2 id="admin">Administration Page </h2>
   <main>
@@ -25,25 +18,22 @@
         <label for="title">
           <span>Resource Title</span>
           <input type="text" name="title" value="" required>
-        </label>
+        </label></br>
         <label for="description">
           <span>Description</span>
           <input type="text" name="description" value="" style="height:30px;" required>
-        </label>
+        </label></br>
         <label for="resource_url">
           <span>Resource URL</span>
           <input type="url" name="resource_url" value="">
-        </label>
+        </label></fieldset>
       </fieldset>
       <button type="submit">Add this resource</button>
     </form>
 
-
-  </main>
-
-  
+  </main>  
   <%- include('../partials/footer') %>
-
+  <script src="/js/app.js"></script>
+  <script src="/js/index.js"></script>
 </body>
-
 </html>
