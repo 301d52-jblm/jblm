@@ -14,7 +14,8 @@ h1{
 }
 
 h2 {
-    
+    color: #7F92B3;
+    font-size: 1.4em;
 }
 /* background from: https://www.duda.co/blog/11-tips-designing-great-website-headers/ */
 header div:first-child{
@@ -41,7 +42,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: whitesmoke;
+    color: #8E205E;
 }
 
 
