@@ -11,6 +11,7 @@ function carouselInit() {
 
 function arrowHandler(event) {
   clearInterval(slideTimer);
+  isAutoSlideStopped = true;
   if(event.target.id === 'arrowLeft'){
     slideDirection = 'left';
   } else {
@@ -48,4 +49,9 @@ function slideSwap() {
     $('.arrow').on('click', arrowHandler);
     slideDirection = 'right';
   }, 600);
+  if(isAutoSlideStopped) {
+    isAutoSlideStopped = false;
+    clearInterval(slideTimer);
+    slideTimer = setTimeout(autoSwap, 1000);
+  }
 }
