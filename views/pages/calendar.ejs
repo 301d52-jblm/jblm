@@ -6,17 +6,7 @@
   
   <iframe src="https://calendar.google.com/calendar/embed?height=650&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=amJsbXVubGltaXRlZEBnbWFpbC5jb20&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%230B8043&amp;showTitle=0&amp;showPrint=0&amp;showTz=0&amp;showCalendars=0" style="border-width:0" width="80%" height="850" frameborder="0" scrolling="no"></iframe>
 
-  <form id="event-request-form" action="/calendar" method="post">
-    <h3>If you would like to add an event to our calendar, please submit the details below:</h3>
-    <input name="requester" placeholder="Your Name" required>
-    <input name="requesterEmail" placeholder="Your E-mail" required>
-    <input name="requesterPhone" placeholder="Your Phone Number">
-    <input name="eventName" placeholder="Name of the event" required>
-    <input name="date" placeholder="Date" required>
-    <input name="time" placeholder="Time" required>
-    <input name="description" placeholder="Description">
-    <button type="submit">Send</button>
-  </form>
+  <%- include('../partials/eventsForm.ejs') %>
 
   <%- include('../partials/footer') %>
 
