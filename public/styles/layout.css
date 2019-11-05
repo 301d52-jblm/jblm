@@ -4,12 +4,22 @@ body{
 }
 #header{
     width: 100%;
+    margin:auto;
+    height:11em;
 }
+
+
+
 /* calendar */
+iframe{
+    margin-left: 25vh;
+    margin-top: 2em;
+}
+
+
 #top5{
     margin: 10px 50px 10px 50px;
     border:2px solid red;
-    /* display: inline; */
     padding: 5px;
 }
 #fbicon{
@@ -17,10 +27,8 @@ body{
     height:51px;
     float: right;
     margin-right:.5em;
-    /* margin-right: 5px; */
     border-radius: 6px;
-    /* margin-bottom: 10em; */
-    /* margin-left: 5px; */
+    
 }
 #linkicon{
     width:52px;
@@ -32,7 +40,6 @@ body{
 #emailicon{
     width:52px;
     height:52px;
-    /* margin-right: 2px; */
     border-radius: 9px;
     float: right;
 }
