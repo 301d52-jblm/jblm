@@ -59,7 +59,11 @@ app.get('/email', getEmailLink);
 
 app.get('/pdf', testPDF);
 
+
+app.get('/response', getResponse);
+
 app.post('/calendar', sendEventEmail);
+
 
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
@@ -105,6 +109,10 @@ function getUpcoming(req, res) {
   let eventList = GCA.getEventList();
   console.log('The current event list: \n', eventList);
   res.send(eventList);
+}
+
+function getResponse(req, res) {
+  res.render('pages/response');
 }
 
 function getCalendar(req, res) {
