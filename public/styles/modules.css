@@ -60,6 +60,7 @@ h1{
 #header > section > section:nth-of-type(2){
     width: 85%;
     justify-content: center;
+    color: #F7F8F9;
 }
 #header > section > section:nth-of-type(2) > h1, #header > section > section:nth-of-type(2) > h2 {
     margin-left: 0;
@@ -86,13 +87,7 @@ h1{
 .calendar{
     color:#8E205E;
     text-decoration: underline;
-    /* flex: row; */
-    flex-flow: right;
 
-    /* margin-right: 1em;
-    margin-left: 70%;
-    line-height: 6em;
-    right: 8em; */
 
 }
 .resources{
@@ -103,14 +98,7 @@ h1{
     line-height: 6em;
     /* position: absolute;  */
     display: inline;
-    /* right: 1em; */
-    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";; */
-    /* opacity: .5; */
 
-    flex-flow: right;
-
-    /* margin-right: 1em;
-    line-height: 6em; */
 
 }
 .resources:hover{
