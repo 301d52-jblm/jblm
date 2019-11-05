@@ -1,20 +1,17 @@
 <html lang="en">
 <%- include('../partials/head') %>
 <body>
+  <%- include('../partials/header') %>
 
-  <section id="header">
-    <h1>JBLM Unlimited</h1>
-    <a class="home3" href="/">Home</a>
-    <a class="calendar3" href="/calendar">Calendar</a>
-  </section>
-  <main>
+  
+  <main class='resourcePage'>
     <h4>Resources</h4>
     <ul>
       <% resource.forEach(partner => { %>
         <li>
-          <h5 class="rr rt"><%= partner.title %></h5>
+          <h5 class="rr rt">	&#9830;<%= partner.title %></h5>
           <p class="rr dt"><%= partner.description %></p>
-          <a class="rr" href="<%= partner.resource_url %>"><%= partner.resource_url %></a>
+          <a class="rr" href="<%= partner.resource_url %>">Resource link</a>
           <!-- <a id="pdf" href="/pdf">PDF</a> -->
         </li>
       <% }) %>
