@@ -154,7 +154,7 @@ function getCalendarItemDetail(req, res) {
 }
 
 function getAdminView(req, res) {
-  const sql = 'SELECT id, logo_img, title, email, resource_url,  description, importance FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url,  description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -196,7 +196,7 @@ function deleteEvent(req, res) {
 }
 
 function getResourceAdminList(req, res) {
-  const sql = 'SELECT id, logo_img, title, email,resource_url, description, importance FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email,resource_url, description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -239,13 +239,12 @@ function postNewResource(req, res) {
     title,
     email,
     resource_url,
-    description,
-    importance
+    description
 
   } = req.body;
-  let values = [logo_img, title, email, resource_url, description, importance];
+  let values = [logo_img, title, email, resource_url, description];
 
-  let sql = 'INSERT INTO resource (logo_img, title, email, resource_url, description, importance) VALUES($1, $2, $3, $4, $5, $6);';
+  let sql = 'INSERT INTO resource (logo_img, title, email, resource_url, description) VALUES($1, $2, $3, $4, $5);';
   client
     .query(sql, values)
     .then(sqlResults => {
