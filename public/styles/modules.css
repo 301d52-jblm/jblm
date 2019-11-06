@@ -91,77 +91,7 @@ header nav a:hover {
     max-width:750px;
     margin:auto;
 }
-input{
-    border: 1px solid black;
-    width:80%;
-}
 
-button{
-    border:1px solid black;
-    background-color: white;
-    border-radius: 10px;
-
-}
-
-h4{
-    text-align: center;
-    margin-top:.75em;
-    font-size: 2em;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
-.rr{
-    margin-left: 5em;
-}
-.rt{
-    margin-top:5em;
-    /* margin-right: 5em; */
-
-}
-.dt{
-    margin-right: 5em;
-}
-#pdf{
-    margin-left: 1em;
-}
-
-@media (max-width: 959px) {
-    
-    /* because the iframes are rendered in an inline-element, use text-align center instead of margin auto */
-    .three-section-contents {
-        text-align: center;
-        padding: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.425);
-    }
-}
-
-@media (min-width: 960px) {
-    
-    iframe {
-        margin: auto;
-    }
-    #three-section-main {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    #left-section, #middle-section {
-        border-right: 1px solid black;
-    }
-    .three-section-contents {
-        padding: 10px;
-        height: 100%;
-        text-align: center;
-    }
-    .three-section {
-        width: 33.3%;
-    }
-    .fb-page {
-    margin: auto;
-    }
-
-}
 
 .resourcePage{
     padding:5%;
