@@ -45,6 +45,11 @@ header nav a:hover {
     color: #8E205E;
 }
 
+.resourcePage{
+    max-width: 750px;
+    margin:auto;
+}
+
 .adminList{
     max-width:750px;
     margin:auto;
@@ -54,7 +59,21 @@ header nav a:hover {
     visibility:hidden;
 }
 
+#admin, #addResource{
+    max-width:750px;
+    margin:auto;
+}
+input{
+    border: 1px solid black;
+    width:80%;
+}
 
+button{
+    border:1px solid black;
+    background-color: white;
+    border-radius: 10px;
+
+}
 
 h4{
     text-align: center;
