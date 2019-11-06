@@ -122,7 +122,7 @@ function getCalendar(req, res) {
 }
 
 function getResources(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url, description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -142,7 +142,7 @@ function getCalendarItemDetail(req, res) {
 }
 
 function getAdminView(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url,  description, importance FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -184,7 +184,7 @@ function deleteEvent(req, res) {
 }
 
 function getResourceAdminList(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email,resource_url, description, importance FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -214,23 +214,26 @@ function getDeleteResourceView(req, res) {
 }
 
 function postNewResource(req, res) {
-  /**
-   * id SERIAL PRIMARY KEY,
-   * title varchar(255),
-   * description text,
-   * resource_url varchar(255),
-   * logo_png bytea
-   */
+
+  // logo_img varchar(255),
+  // title varchar(255),
+  // email varchar(255),
+  // resource_url varchar(255),
+  // description text,
+  // importance int;
 
   let {
+    logo_img,
     title,
-    description,
+    email,
     resource_url,
-    // logo_png
-  } = req.body;
-  let values = [title, description, resource_url];
+    description,
+    importance
 
-  let sql = 'INSERT INTO resource (title, description, resource_url) VALUES($1, $2, $3);';
+  } = req.body;
+  let values = [logo_img, title, email, resource_url, description, importance];
+
+  let sql = 'INSERT INTO resource (logo_img, title, email, resource_url, description, importance) VALUES($1, $2, $3, $4, $5, $6);';
   client
     .query(sql, values)
     .then(sqlResults => {
@@ -253,8 +256,6 @@ function deleteResource(req, res) {
     .then(sqlResults => {
       console.log('deleteResource() success');
 
-      // TODO: should go to getAdminView(req, res); make sure this has the desired result!
-      // getResourceAdminList(req, res);
 
       res.redirect(303, `/${adminRoute}/resource`);
     })
