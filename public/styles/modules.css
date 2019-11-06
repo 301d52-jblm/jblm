@@ -117,6 +117,10 @@ header nav a:hover {
     padding:5%;
 }
 
+#response{
+    padding:5vh;
+}
+
 #resources-request-form {
     display: none;
 }
