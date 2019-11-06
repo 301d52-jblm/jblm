@@ -78,7 +78,7 @@ app.post('/getLocation', getLocation);
 
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
-const adminRoute = '123qwe';
+const adminRoute = process.env.ADMIN_ROUTE;
 
 // Make sure we do not set up the routes if ADMIN_ROUTE is not defined.
 if (adminRoute) {
