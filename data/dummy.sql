@@ -1,4 +1,4 @@
-\c jblm_unlimited_cf19;
+\c jblm;
 
 INSERT INTO resource (title, description, resource_url) VALUES ('Recruit Military', 'RecruitMilitary is a wholly-owned subsidiary of Bradley-Morris, Inc. (BMI), the largest military-focused recruiting company in the U.S.', 'https://events.recruitmilitary.com/exhibitors/schedule');
 
