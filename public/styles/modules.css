@@ -163,4 +163,14 @@ footer section:last-child p{
         margin-top: 2em;
         margin-bottom: 2em;
     }
+
+    footer section:first-child{
+        order: 5;
+        flex: 0 0 100%;
+    }
+    footer section:nth-of-type(2){
+        flex: 0 0 100%;
+    }
 }
+
+
