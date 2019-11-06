@@ -157,6 +157,13 @@ footer section:last-child p{
     border-radius: 6px;
 }
 
+#calendericon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+
 /* copyright in the footer */
 #copyright{
     background: rgb(0, 0, 0);
@@ -207,6 +214,16 @@ footer section:last-child p{
         border: 0;
         margin-top: 2em;
         margin-bottom: 2em;
+    }
+
+    .calendar-section section:first-of-type {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    
+    .calendar-section section:last-of-type {
+        flex: 0 0 100%;
+        padding: 4em;
     }
 
     footer section:first-child{
