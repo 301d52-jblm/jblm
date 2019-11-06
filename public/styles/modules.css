@@ -95,16 +95,6 @@ header nav a:hover {
     margin-left:50%;
 }
 
-input{
-    border: 1px solid black;
-    width:80%;
-}
-
-button{
-    border:1px solid black;
-    background-color: white;
-    border-radius: 10px;
-
 .resourcePage{
     padding:5%;
 }
