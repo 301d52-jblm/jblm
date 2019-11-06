@@ -84,7 +84,7 @@ header nav a:hover {
 }
 
 #editPartial{
-    visibility:hidden;
+    display:none;
 }
 
 #admin, #addResource{

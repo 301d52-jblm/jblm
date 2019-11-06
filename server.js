@@ -309,8 +309,7 @@ function sendEventEmail(request, response) {
   });
   //refresh the page after submitting:
   response.redirect('/calendar');
-};
-
+}
 
 function sendResourcesEmail(request, response) {
   var transporter = nodemailer.createTransport({
