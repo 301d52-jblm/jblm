@@ -1,19 +1,11 @@
-/* copyright in the footer */
-#copyright{
-    background: rgb(0, 0, 0);
-    color: white;
-    text-align: center;
-    height: 3em;
-    line-height: 3em;
-}
-h1{
+header h1{
     color: white;
     font-family: 'Jomolhari', serif; 
     font-size: 2em;
     font-weight: bold;
 }
 
-h2 {
+header h2 {
     color: #7F92B3;
     font-size: 1.4em;
 }
@@ -28,7 +20,6 @@ header div:first-child img {
 
 header section {
     flex: 0 0 50%;
-
 }
 
 header nav {
@@ -45,75 +36,59 @@ header nav a:hover {
     color: #8E205E;
 }
 
+.main-columns section:first-child{
+    flex: 0 0 33%;
+    text-align: center;
+}
+
+.main-columns section:nth-child(2){
+    flex: 0 0 33%;
+    border-right: 1px solid #777777;
+    border-left: 1px solid #777777;
+    text-align: center;
+}
+
+.main-columns section:last-child{
+    flex: 0 0 33%;
+    text-align: center;
+}
+
+.main-columns section:nth-child(2) iframe {
+    width: 80%;
+    height: 500px;
+}
+
+.main-columns section:last-child{
+    text-align: left;
+    padding-left: 2em;
+}
+
+.main-columns section:last-child{
+    text-align: left;
+    padding-left: 2em;
+}
+
+.main-columns section:last-child a {
+    cursor:pointer;
+}
+
+.resourcePage{
+    max-width: 750px;
+    margin:auto;
+}
+
 .adminList{
     max-width:750px;
     margin:auto;
 }
 
 #editPartial{
-    visibility:hidden;
+    display:none;
 }
 
-
-
-h4{
-    text-align: center;
-    margin-top:.75em;
-    font-size: 2em;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
-.rr{
-    margin-left: 5em;
-}
-.rt{
-    margin-top:5em;
-    /* margin-right: 5em; */
-
-}
-.dt{
-    margin-right: 5em;
-}
-#pdf{
-    margin-left: 1em;
-}
-
-@media (max-width: 959px) {
-    
-    /* because the iframes are rendered in an inline-element, use text-align center instead of margin auto */
-    .three-section-contents {
-        text-align: center;
-        padding: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.425);
-    }
-}
-
-@media (min-width: 960px) {
-    
-    iframe {
-        margin: auto;
-    }
-    #three-section-main {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    #left-section, #middle-section {
-        border-right: 1px solid black;
-    }
-    .three-section-contents {
-        padding: 10px;
-        height: 100%;
-        text-align: center;
-    }
-    .three-section {
-        width: 33.3%;
-    }
-    .fb-page {
-    margin: auto;
-    }
-
+#admin, #addResource{
+    max-width:750px;
+    margin:auto;
 }
 
 .resourcePage{
@@ -125,6 +100,115 @@ h4{
     float: right;
     margin-right: 100px;
 }
+
 #resources-request-form {
     display: none;
 }
+
+#resources-request-form ul li {
+    margin-bottom: 1em;
+}
+
+.index-resources {
+    margin-top: 2em;
+}
+
+footer section:first-child {
+    flex: 0 0 15%;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid #999999
+}
+
+footer section:first-child img {
+    padding-right: 4em;
+    height: 10vw;
+}
+
+footer section:last-child p{
+    flex: 0 0 85%;
+    font-size: 1.2em;
+    padding-left: 3em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    color: whitesmoke;
+}
+
+#fbicon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+
+/* copyright in the footer */
+#copyright{
+    background: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    height: 3em;
+    line-height: 3em;
+}
+
+@media (max-width: 1000px) {
+
+    header div:first-child,
+    header section:first-child
+    {
+        flex: 0 0 50%;
+    }
+
+    header div:first-child {
+        text-align: center;
+    }
+    header div:first-child img {
+        width: 60%
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+    header h2 {
+        font-size: 1em;
+        color: #8E205E;
+    }
+    header nav {
+        flex: 0 0 100%;
+    }
+
+    header nav {
+        margin-top: 1.4em;
+        text-align: center;
+    }
+
+    .main-columns section:first-child,
+    .main-columns section:nth-child(2),
+    .main-columns section:last-child
+    {
+        flex: 0 0 100%;
+    }
+    .main-columns section:nth-child(2){
+        border: 0;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    footer section:first-child{
+        order: 5;
+        flex: 0 0 100%;
+        border: 0;
+        margin-top: 1em;
+    }
+    footer section:first-child img {
+        padding: 0;
+        height: 36vw;
+    }
+    footer section:last-child p{
+        flex: 0 0 100%;
+        text-align: center;
+        padding: 0;
+        font-size: 1em;
+    }
+}
+
+

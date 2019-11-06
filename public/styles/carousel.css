@@ -17,8 +17,8 @@
 }
 
 .carousel-box .arrow {
-  width: 100px;
-  height: 100px;
+  width: auto;
+  height: 8vw;
   margin: auto;
   cursor: pointer;
   background-repeat: no-repeat;
@@ -56,6 +56,12 @@
   width: 100%;
 }
 
+
+@media (max-width: 1000px) {
+  .carousel-box div:first-child, .carousel-box div:last-child {
+    padding: 0;
+  }
+}
 
 /* css animation classes for carousel */
 

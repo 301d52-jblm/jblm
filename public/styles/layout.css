@@ -2,6 +2,22 @@ body{
     background: white;
     font-family: 'Jomolhari', serif;
 }
+#errorPage{
+    background-image: url(../assets/images/canva-error.jpg);
+    background-size: 100vw;
+    height:50vw;
+}
+#errorPage h2{
+    height: 50%;
+    color: #8E205E;
+    text-align: center;
+    font-size: 50px;
+}
+#errorPage p{
+    color: #8E205E;
+    text-align: center;
+    font-size: 25px;
+}
 
 header, footer{
     display: flex;
@@ -20,56 +36,31 @@ header, footer{
     margin: 4em auto;
 }
 
-.main-columns section:first-child, 
-.main-columns section:nth-child(2), 
-.main-columns section:last-child
-{
-    flex: 0 0 33%;
-    text-align: center;
-}
-
-.main-columns section:nth-child(2){
-    border-right: 1px solid #777777;
-    border-left: 1px solid #777777;
-}
-
-.main-columns section:last-child{
-    text-align: left;
-    padding-left: 2em;
-}
-
-footer {
-    padding: 4em;
-    height: 20em;
-    align-items: center;
-    justify-content: center;
-}
-
-footer section:first-child {
-    flex: 0 0 15%;
-    text-align: center;
-    height: 100%;
-    border-right: 1px solid #999999
-}
-footer section:first-child img {
-    padding-right: 4em;
-    height: 100%;
-}
-
-footer section:last-child p{
-    flex: 0 0 85%;
-    font-size: 1.2em;
-    padding-left: 3em;
-    margin-bottom: 0.5em;
-    text-align: left;
-    color: whitesmoke;
-}
-
 #fbicon{
     width:51px;
     height:51px;
     margin-right:.5em;
     border-radius: 6px;
 }
+#calendericon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
 
+footer {
+    padding: 4em;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .main-columns {
+        flex-wrap: wrap;
+    }
+    header, footer{
+        flex-wrap: wrap;
+    }
+}
 
