@@ -53,11 +53,16 @@ app.get('/upcoming/:count', getUpcoming);
 app.get('/calendar', getCalendar);
 // render the Resource page
 app.get('/resources', getResources);
+
 app.get('/calendar/:item_id', getCalendarItemDetail);
 
 app.get('/email', getEmailLink);
 
+app.get('/error', handleError);
+
 app.get('/pdf', testPDF);
+
+app.get('/map', getMap);
 
 app.post('/eventsForm', sendEventEmail);
 app.post('/', sendResourcesEmail);
@@ -65,6 +70,8 @@ app.post('/', sendResourcesEmail);
 app.get('/response', getResponse);
 
 app.post('/calendar', sendEventEmail);
+
+
 
 
 // render the Admin page
@@ -116,6 +123,11 @@ function getUpcoming(req, res) {
 function getResponse(req, res) {
   res.render('pages/response');
 }
+
+function getMap(req, res) {
+  res.render('pages/map');
+}
+
 
 function getCalendar(req, res) {
   res.render('pages/calendar');
@@ -339,7 +351,7 @@ function handleError(err, response) {
     response
       .status(500)
       .render('pages/error', {
-        header: 'Uh Oh something went wrong :(',
+        // header: 'Uh Oh something went wrong :(',
         error: err.toString()
       });
   }

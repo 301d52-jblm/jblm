@@ -2,6 +2,22 @@ body{
     background: white;
     font-family: 'Jomolhari', serif;
 }
+#errorPage{
+    background-image: url(../assets/images/canva-error.jpg);
+    background-size: 100vw;
+    height:50vw;
+}
+#errorPage h2{
+    height: 50%;
+    color: #8E205E;
+    text-align: center;
+    font-size: 50px;
+}
+#errorPage p{
+    color: #8E205E;
+    text-align: center;
+    font-size: 25px;
+}
 
 header, footer{
     display: flex;
