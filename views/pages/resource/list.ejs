@@ -21,11 +21,11 @@
           <!-- Edit and Delete links -->
 
           <!-- /${adminRoute}/resource/edit/:id -->
-          <button id="edit" type="submit">Edit Details</button></br></br>
+          <button class='adminBtn' id="edit" type="submit">Edit Details</button></br></br>
           <!-- this should actually be a PUT with _method of delete after a confirmation prompt -->
           <form action="<%= `/${adminRoute}/resource/delete/${partner.id}` %>" method="post">
             <input type="hidden" name="_method" value="delete">
-            <button type="submit">Delete</button></br></br>
+            <button class='adminBtn' type="submit">Delete</button></br></br>
           </form>
         </li>
       <% }) %>
