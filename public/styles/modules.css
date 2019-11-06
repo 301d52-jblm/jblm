@@ -1,11 +1,3 @@
-/* copyright in the footer */
-#copyright{
-    background: rgb(0, 0, 0);
-    color: white;
-    text-align: center;
-    height: 3em;
-    line-height: 3em;
-}
 h1{
     color: white;
     font-family: 'Jomolhari', serif; 
@@ -45,6 +37,42 @@ header nav a:hover {
     color: #8E205E;
 }
 
+.main-columns section:first-child{
+    flex: 0 0 33%;
+    text-align: center;
+}
+
+.main-columns section:nth-child(2){
+    flex: 0 0 33%;
+    border-right: 1px solid #777777;
+    border-left: 1px solid #777777;
+    text-align: center;
+}
+
+.main-columns section:last-child{
+    flex: 0 0 33%;
+    text-align: center;
+}
+
+.main-columns section:nth-child(2) iframe {
+    width: 400px;
+    height: 500px;
+}
+
+.main-columns section:last-child{
+    text-align: left;
+    padding-left: 2em;
+}
+
+.main-columns section:last-child{
+    text-align: left;
+    padding-left: 2em;
+}
+
+.main-columns section:last-child a {
+    cursor:pointer;
+}
+
 .adminList{
     max-width:750px;
     margin:auto;
@@ -55,6 +83,51 @@ header nav a:hover {
     float: right;
     margin-right: 100px;
 }
+
 #resources-request-form {
     display: none;
+}
+
+#resources-request-form ul li {
+    margin-bottom: 1em;
+}
+
+.index-resources {
+    margin-top: 2em;
+}
+
+footer section:first-child {
+    flex: 0 0 15%;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid #999999
+}
+footer section:first-child img {
+    padding-right: 4em;
+    height: 100%;
+}
+
+footer section:last-child p{
+    flex: 0 0 85%;
+    font-size: 1.2em;
+    padding-left: 3em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    color: whitesmoke;
+}
+
+#fbicon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+
+/* copyright in the footer */
+#copyright{
+    background: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    height: 3em;
+    line-height: 3em;
 }
