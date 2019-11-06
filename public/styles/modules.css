@@ -1,11 +1,11 @@
-h1{
+header h1{
     color: white;
     font-family: 'Jomolhari', serif; 
     font-size: 2em;
     font-weight: bold;
 }
 
-h2 {
+header h2 {
     color: #7F92B3;
     font-size: 1.4em;
 }
@@ -20,7 +20,6 @@ header div:first-child img {
 
 header section {
     flex: 0 0 50%;
-
 }
 
 header nav {
@@ -92,7 +91,6 @@ header nav a:hover {
     margin:auto;
 }
 
-
 .resourcePage{
     padding:5%;
 }
@@ -121,9 +119,10 @@ footer section:first-child {
     height: 100%;
     border-right: 1px solid #999999
 }
+
 footer section:first-child img {
     padding-right: 4em;
-    height: 100%;
+    height: 10vw;
 }
 
 footer section:last-child p{
@@ -152,6 +151,36 @@ footer section:last-child p{
 }
 
 @media (max-width: 1000px) {
+
+    header div:first-child,
+    header section:first-child
+    {
+        flex: 0 0 50%;
+    }
+
+    header div:first-child {
+        text-align: center;
+    }
+    header div:first-child img {
+        width: 60%
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+    header h2 {
+        font-size: 1em;
+        color: #8E205E;
+    }
+    header nav {
+        flex: 0 0 100%;
+    }
+
+    header nav {
+        margin-top: 1.4em;
+        text-align: center;
+    }
+
     .main-columns section:first-child,
     .main-columns section:nth-child(2),
     .main-columns section:last-child
@@ -167,9 +196,18 @@ footer section:last-child p{
     footer section:first-child{
         order: 5;
         flex: 0 0 100%;
+        border: 0;
+        margin-top: 1em;
     }
-    footer section:nth-of-type(2){
+    footer section:first-child img {
+        padding: 0;
+        height: 36vw;
+    }
+    footer section:last-child p{
         flex: 0 0 100%;
+        text-align: center;
+        padding: 0;
+        font-size: 1em;
     }
 }
 

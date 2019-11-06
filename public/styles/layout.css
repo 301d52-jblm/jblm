@@ -36,23 +36,6 @@ header, footer{
     margin: 4em auto;
 }
 
-footer {
-    padding: 4em;
-    height: 20em;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width: 1000px) {
-    .main-columns {
-        flex-wrap: wrap;
-    }
-    footer{
-        flex-wrap: wrap;
-    }
-}
-
-
 #fbicon{
     width:51px;
     height:51px;
@@ -64,5 +47,20 @@ footer {
     height:51px;
     margin-right:.5em;
     border-radius: 6px;
+}
+
+footer {
+    padding: 4em;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .main-columns {
+        flex-wrap: wrap;
+    }
+    header, footer{
+        flex-wrap: wrap;
+    }
 }
 
