@@ -15,8 +15,7 @@ CREATE TABLE resource (
   title varchar(255),
   email varchar(255),
   resource_url varchar(255),
-  description text,
-  importance int;
+  description text
 );
 
 DROP TABLE IF EXISTS resource_file;
