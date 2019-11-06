@@ -1,7 +1,6 @@
 /* this is a comment  */
 @import 'carousel.css';
 
-html{
-    margin: auto;
+*{
+    box-sizing: border-box;
 }
-
