@@ -53,11 +53,16 @@ app.get('/upcoming/:count', getUpcoming);
 app.get('/calendar', getCalendar);
 // render the Resource page
 app.get('/resources', getResources);
+
 app.get('/calendar/:item_id', getCalendarItemDetail);
 
 app.get('/email', getEmailLink);
 
+app.get('/error', handleError);
+
 app.get('/pdf', testPDF);
+
+app.get('/map', getMap);
 
 app.post('/eventsForm', sendEventEmail);
 app.post('/', sendResourcesEmail);
@@ -67,6 +72,8 @@ app.get('/response', getResponse);
 app.post('/calendar', sendEventEmail);
 
 app.post('/getLocation', getLocation);
+
+
 
 
 // render the Admin page
@@ -119,12 +126,17 @@ function getResponse(req, res) {
   res.render('pages/response');
 }
 
+function getMap(req, res) {
+  res.render('pages/map');
+}
+
+
 function getCalendar(req, res) {
   res.render('pages/calendar');
 }
 
 function getResources(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url, description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -144,7 +156,7 @@ function getCalendarItemDetail(req, res) {
 }
 
 function getAdminView(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url,  description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -186,7 +198,7 @@ function deleteEvent(req, res) {
 }
 
 function getResourceAdminList(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email,resource_url, description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -216,23 +228,25 @@ function getDeleteResourceView(req, res) {
 }
 
 function postNewResource(req, res) {
-  /**
-   * id SERIAL PRIMARY KEY,
-   * title varchar(255),
-   * description text,
-   * resource_url varchar(255),
-   * logo_png bytea
-   */
+
+  // logo_img varchar(255),
+  // title varchar(255),
+  // email varchar(255),
+  // resource_url varchar(255),
+  // description text,
+  // importance int;
 
   let {
+    logo_img,
     title,
-    description,
+    email,
     resource_url,
-    // logo_png
-  } = req.body;
-  let values = [title, description, resource_url];
+    description
 
-  let sql = 'INSERT INTO resource (title, description, resource_url) VALUES($1, $2, $3);';
+  } = req.body;
+  let values = [logo_img, title, email, resource_url, description];
+
+  let sql = 'INSERT INTO resource (logo_img, title, email, resource_url, description) VALUES($1, $2, $3, $4, $5);';
   client
     .query(sql, values)
     .then(sqlResults => {
@@ -255,8 +269,6 @@ function deleteResource(req, res) {
     .then(sqlResults => {
       console.log('deleteResource() success');
 
-      // TODO: should go to getAdminView(req, res); make sure this has the desired result!
-      // getResourceAdminList(req, res);
 
       res.redirect(303, `/${adminRoute}/resource`);
     })
@@ -299,8 +311,7 @@ function sendEventEmail(request, response) {
   });
   //refresh the page after submitting:
   response.redirect('/calendar');
-};
-
+}
 
 function sendResourcesEmail(request, response) {
   var transporter = nodemailer.createTransport({
@@ -356,7 +367,7 @@ function handleError(err, response) {
     response
       .status(500)
       .render('pages/error', {
-        header: 'Uh Oh something went wrong :(',
+        // header: 'Uh Oh something went wrong :(',
         error: err.toString()
       });
   }
