@@ -95,12 +95,6 @@ header nav a:hover {
     padding:5%;
 }
 
-#event-request-form {
-    width: 100px;
-    float: right;
-    margin-right: 100px;
-}
-
 #resources-request-form {
     display: none;
 }
@@ -113,6 +107,28 @@ header nav a:hover {
     margin-top: 2em;
 }
 
+/* CALENDAR PAGE STYLING //////////////////////*/
+
+.calendar-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+}
+
+.calendar-section section:first-of-type {
+    flex: 0 0 70%;
+    text-align: center;
+}
+
+.calendar-section section:last-of-type {
+    flex: 0 0 20%;
+}
+
+#event-request-form ul li{
+    margin-bottom: 1em;
+}
+
+/* CALENDAR PAGE STYLING END///////////// */
 footer section:first-child {
     flex: 0 0 15%;
     text-align: center;
@@ -135,6 +151,13 @@ footer section:last-child p{
 }
 
 #fbicon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+
+#calendericon{
     width:51px;
     height:51px;
     margin-right:.5em;
@@ -191,6 +214,16 @@ footer section:last-child p{
         border: 0;
         margin-top: 2em;
         margin-bottom: 2em;
+    }
+
+    .calendar-section section:first-of-type {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    
+    .calendar-section section:last-of-type {
+        flex: 0 0 100%;
+        padding: 4em;
     }
 
     footer section:first-child{
