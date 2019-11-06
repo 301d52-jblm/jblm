@@ -95,9 +95,8 @@ Usability so users can easily manuever the cite. Usability means that it is easy
 # Database Entity-Relationship-Diagram
 ![database-diagram](https://github.com/301d52-jblm/jblm/blob/willday1/images_for_readme/database-diagram.jpg)
 
-
-
-
+# Resources
+![](https://www.alt-codes.net/diamond-symbols)
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

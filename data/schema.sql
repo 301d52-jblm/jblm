@@ -1,9 +1,5 @@
-DROP DATABASE IF EXISTS jblm_unlimited_cf19;
-CREATE DATABASE jblm_unlimited_cf19;
-\c jblm_unlimited_cf19;
-
-
 DROP TABLE IF EXISTS event;
+
 CREATE TABLE event (
   id SERIAL PRIMARY KEY,
   event_title varchar(255),
@@ -15,10 +11,12 @@ CREATE TABLE event (
 DROP TABLE IF EXISTS resource;
 CREATE TABLE resource (
   id SERIAL PRIMARY KEY,
+  logo_img varchar(255),
   title varchar(255),
-  description text,
+  email varchar(255),
   resource_url varchar(255),
-  logo_png bytea
+  description text,
+  importance int;
 );
 
 DROP TABLE IF EXISTS resource_file;
@@ -28,5 +26,6 @@ CREATE TABLE resource_file (
   file_name varchar(255),
   file_content bytea
 );
+
 
 ALTER TABLE resource_file ADD CONSTRAINT fk_resource FOREIGN KEY (resource_id) REFERENCES resource(id);

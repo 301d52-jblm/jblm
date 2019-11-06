@@ -7,7 +7,8 @@ const pg = require('pg');
 const superagent = require('superagent');
 const methodOverride = require('method-override');
 const readline = require('readline');
-const {google} = require('googleapis');
+const { google } = require('googleapis');
+const nodemailer = require('nodemailer');
 
 const googleCalendarAPI = require('./googleapi');
 const GCA = new googleCalendarAPI();
@@ -52,11 +53,26 @@ app.get('/upcoming/:count', getUpcoming);
 app.get('/calendar', getCalendar);
 // render the Resource page
 app.get('/resources', getResources);
+
 app.get('/calendar/:item_id', getCalendarItemDetail);
 
 app.get('/email', getEmailLink);
 
+app.get('/error', handleError);
+
 app.get('/pdf', testPDF);
+
+app.get('/map', getMap);
+
+app.post('/eventsForm', sendEventEmail);
+app.post('/', sendResourcesEmail);
+
+app.get('/response', getResponse);
+
+app.post('/calendar', sendEventEmail);
+
+
+
 
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
@@ -104,12 +120,21 @@ function getUpcoming(req, res) {
   res.send(eventList);
 }
 
+function getResponse(req, res) {
+  res.render('pages/response');
+}
+
+function getMap(req, res) {
+  res.render('pages/map');
+}
+
+
 function getCalendar(req, res) {
   res.render('pages/calendar');
 }
 
 function getResources(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url, description FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -129,7 +154,7 @@ function getCalendarItemDetail(req, res) {
 }
 
 function getAdminView(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url,  description, importance FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -171,7 +196,7 @@ function deleteEvent(req, res) {
 }
 
 function getResourceAdminList(req, res) {
-  const sql = 'SELECT id, title, description, resource_url, logo_png FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email,resource_url, description, importance FROM resource ORDER BY title DESC;';
 
   client
     .query(sql)
@@ -201,23 +226,26 @@ function getDeleteResourceView(req, res) {
 }
 
 function postNewResource(req, res) {
-/**
- * id SERIAL PRIMARY KEY,
- * title varchar(255),
- * description text,
- * resource_url varchar(255),
- * logo_png bytea
- */
+
+  // logo_img varchar(255),
+  // title varchar(255),
+  // email varchar(255),
+  // resource_url varchar(255),
+  // description text,
+  // importance int;
 
   let {
+    logo_img,
     title,
-    description,
+    email,
     resource_url,
-    // logo_png
-  } = req.body;
-  let values = [title, description, resource_url];
+    description,
+    importance
 
-  let sql = 'INSERT INTO resource (title, description, resource_url) VALUES($1, $2, $3);';
+  } = req.body;
+  let values = [logo_img, title, email, resource_url, description, importance];
+
+  let sql = 'INSERT INTO resource (logo_img, title, email, resource_url, description, importance) VALUES($1, $2, $3, $4, $5, $6);';
   client
     .query(sql, values)
     .then(sqlResults => {
@@ -240,8 +268,6 @@ function deleteResource(req, res) {
     .then(sqlResults => {
       console.log('deleteResource() success');
 
-      // TODO: should go to getAdminView(req, res); make sure this has the desired result!
-      // getResourceAdminList(req, res);
 
       res.redirect(303, `/${adminRoute}/resource`);
     })
@@ -255,6 +281,66 @@ function testPDF(req, res) {
   res.send(data);
 }
 
+function sendEventEmail(request, response) {
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'jblm.visitor@gmail.com',
+      pass: 'codefellows'
+    }
+  });
+
+  let { requester, requesterEmail, requesterPhone, eventName, date, time, description } = request.body;
+
+  var mailOptions = {
+    from: 'jblm.visitor@gmail.com',
+    //insert multiple email addresses in the following format
+    //`first@email.com;second@email.com;third@email.com`
+    to: `lwilber92@gmail.com`,
+    subject: 'Please add my event to the Hawk Career Center calendar',
+    text: `From: ${requester}\nEmail: ${requesterEmail}\nPhone Number: ${requesterPhone}\nEvent name: ${eventName}\nDate: ${date}\nTime: ${time}\nDescription: ${description}`
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  //refresh the page after submitting:
+  response.redirect('/calendar');
+};
+
+
+function sendResourcesEmail(request, response) {
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'jblm.visitor@gmail.com',
+      pass: 'codefellows'
+    }
+  });
+  let { name, email, phone, logoURL, siteURL, description } = request.body;
+
+  var mailOptions = {
+    from: 'jblm.visitor@gmail.com',
+    //insert multiple email addresses in the following format
+    //`first@email.com;second@email.com;third@email.com`
+    to: `lwilber92@gmail.com`,
+    subject: 'Please add me to your HAWK Career Center Resources.',
+    text: `From: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nLogo URL: ${logoURL}\nWebsite: ${siteURL}\nDescription: ${description}`
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
+
 
 // ========== Error Function ========== //
 function handleError(err, response) {
@@ -266,11 +352,14 @@ function handleError(err, response) {
     response
       .status(500)
       .render('pages/error', {
-        header: 'Uh Oh something went wrong :(',
+        // header: 'Uh Oh something went wrong :(',
         error: err.toString()
       });
   }
 }
 
+
+
+
 // ========== Listen on PORT ==========
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

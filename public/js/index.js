@@ -28,5 +28,9 @@ function loadData() {
   });
 }
 
+$('#resourcesFormToggle').click(function(){
+  $('#resources-request-form').toggle();
+});
+
 $().ready(init);
 
