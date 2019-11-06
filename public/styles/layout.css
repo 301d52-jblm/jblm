@@ -49,3 +49,17 @@ footer {
     }
 }
 
+
+#fbicon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+#calendericon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+
