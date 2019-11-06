@@ -91,6 +91,11 @@ header nav a:hover {
     max-width:750px;
     margin:auto;
 }
+
+#add{
+    margin-left:50%;
+}
+
 input{
     border: 1px solid black;
     width:80%;
