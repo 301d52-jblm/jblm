@@ -55,7 +55,7 @@ header nav a:hover {
 }
 
 .main-columns section:nth-child(2) iframe {
-    width: 400px;
+    width: 80%;
     height: 500px;
 }
 
@@ -130,4 +130,18 @@ footer section:last-child p{
     text-align: center;
     height: 3em;
     line-height: 3em;
+}
+
+@media (max-width: 1000px) {
+    .main-columns section:first-child,
+    .main-columns section:nth-child(2),
+    .main-columns section:last-child
+    {
+        flex: 0 0 100%;
+    }
+    .main-columns section:nth-child(2){
+        border: 0;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
 }

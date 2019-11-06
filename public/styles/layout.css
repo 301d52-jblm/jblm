@@ -27,5 +27,9 @@ footer {
     justify-content: center;
 }
 
-
+@media (max-width: 1000px) {
+    .main-columns {
+        flex-wrap: wrap;
+    }
+}
 
