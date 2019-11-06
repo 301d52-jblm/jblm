@@ -47,7 +47,7 @@ footer {
     .main-columns {
         flex-wrap: wrap;
     }
-    header {
+    header, footer{
         flex-wrap: wrap;
     }
 }
