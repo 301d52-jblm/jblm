@@ -64,15 +64,13 @@ app.get('/pdf', testPDF);
 
 app.get('/map', getMap);
 
-app.post('/eventsForm', sendEventEmail);
-app.post('/', sendResourcesEmail);
+app.post('/eventRoute', sendEventEmail);
+
+app.post('/resRoute', sendResourcesEmail);
 
 app.get('/response', getResponse);
 
-app.post('/calendar', sendEventEmail);
-
 app.post('/getLocation', getLocation);
-
 
 
 
@@ -229,13 +227,6 @@ function getDeleteResourceView(req, res) {
 
 function postNewResource(req, res) {
 
-  // logo_img varchar(255),
-  // title varchar(255),
-  // email varchar(255),
-  // resource_url varchar(255),
-  // description text,
-  // importance int;
-
   let {
     logo_img,
     title,
@@ -250,14 +241,21 @@ function postNewResource(req, res) {
   client
     .query(sql, values)
     .then(sqlResults => {
-      // res.redirect(`/${adminRoute}`);
       getResourceAdminList(req, res);
     })
     .catch(err => handleError(err, res));
 }
 
 function updateResource(req, res) {
-  res.redirect(`/${adminRoute}`);
+  let {logo_img, title, email, resource_url, description} = req.body;
+  let SQL = 'UPDATE resource SET logo_url=$1, title=$2, email=$3, resource_url=$4, description=$5, WHERE id=$6;';
+  let safeValues = [logo_img, title, email, resource_url, description];
+
+  client.query(SQL, safeValues)
+    .then(() => {
+      res.redirect(`/${adminRoute}/resource`);
+    })
+    .catch(err => {console.error(err)});
 }
 
 function deleteResource(req, res) {
@@ -297,7 +295,7 @@ function sendEventEmail(request, response) {
     from: 'jblm.visitor@gmail.com',
     //insert multiple email addresses in the following format
     //`first@email.com;second@email.com;third@email.com`
-    to: `lwilber92@gmail.com`,
+    to: `ravend17@gmail.com`,
     subject: 'Please add my event to the Hawk Career Center calendar',
     text: `From: ${requester}\nEmail: ${requesterEmail}\nPhone Number: ${requesterPhone}\nEvent name: ${eventName}\nDate: ${date}\nTime: ${time}\nDescription: ${description}`
   };
@@ -310,7 +308,7 @@ function sendEventEmail(request, response) {
     }
   });
   //refresh the page after submitting:
-  response.redirect('/calendar');
+  response.redirect('/response');
 }
 
 function sendResourcesEmail(request, response) {
@@ -327,7 +325,7 @@ function sendResourcesEmail(request, response) {
     from: 'jblm.visitor@gmail.com',
     //insert multiple email addresses in the following format
     //`first@email.com;second@email.com;third@email.com`
-    to: `lwilber92@gmail.com`,
+    to: `ravend17@gmail.com`,
     subject: 'Please add me to your HAWK Career Center Resources.',
     text: `From: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nLogo URL: ${logoURL}\nWebsite: ${siteURL}\nDescription: ${description}`
   };
@@ -339,6 +337,7 @@ function sendResourcesEmail(request, response) {
       console.log('Email sent: ' + info.response);
     }
   });
+  response.redirect('/response');
 }
 
 
