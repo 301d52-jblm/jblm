@@ -71,12 +71,14 @@ app.get('/response', getResponse);
 
 app.post('/calendar', sendEventEmail);
 
+app.post('/getLocation', getLocation);
+
 
 
 
 // render the Admin page
 // app.get('/edit-mode/authority/admin', renderAdmin);
-const adminRoute = process.env.ADMIN_ROUTE;
+const adminRoute = '123qwe';
 
 // Make sure we do not set up the routes if ADMIN_ROUTE is not defined.
 if (adminRoute) {
@@ -337,6 +339,21 @@ function sendResourcesEmail(request, response) {
       console.log('Email sent: ' + info.response);
     }
   });
+}
+
+
+function getLocation(request, response) {
+  let location = request.body.location;
+
+  superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${process.env.LOCATION_API_KEY}`)
+    .then(resultsFromSuperagent => {
+      let yourAddress = resultsFromSuperagent.body.results[0].formatted_address;
+      let hawkAddress = '11577 41st Division Drive (Lewis North), Joint Base Lewis McChord, WA';
+      let directionsURL = `http://maps.google.com/maps?saddr="${yourAddress}"&daddr=${hawkAddress}`;
+      response.redirect(directionsURL);
+    })
+    .catch(error => console.error(error));
+
 }
 
 
