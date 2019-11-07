@@ -3,6 +3,7 @@ header h1{
     font-family: 'Jomolhari', serif; 
     font-size: 2em;
     font-weight: bold;
+    margin-bottom: 0.3em;
 }
 
 header h2 {
@@ -53,6 +54,10 @@ header nav a:hover {
     text-align: center;
 }
 
+.main-columns section:nth-child(2) p {
+    margin-bottom: 1em;
+}
+
 .main-columns section:nth-child(2) iframe {
     width: 80%;
     height: 500px;
@@ -92,7 +97,7 @@ header nav a:hover {
     text-align:center;
 }
 
-.admin-section h2, .resource-section h2{
+.admin-section h2, .resource-section h2, .response h2{
     text-align:center;
     font-size: 25px;
     text-decoration: underline;
@@ -173,8 +178,16 @@ header nav a:hover {
     height: 100px;
 }
 
-#response{
-    padding:5vh;
+.response {
+    width: 80%;
+    margin: 2em auto;
+    text-align: center;
+    padding: 8em;
+}
+
+.response h4 {
+    margin-top: 2em;
+    font-size: 1.2em;
 }
 
 .index-resources {
@@ -253,6 +266,10 @@ footer section:last-child p{
     margin-bottom: 0.5em;
     text-align: left;
     color: whitesmoke;
+}
+
+footer section:last-child input{
+    color: black;
 }
 
 #fbicon{
