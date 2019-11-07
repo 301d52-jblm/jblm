@@ -12,8 +12,10 @@
       <fieldset>
         <legend>Add a Resource:</legend>
         <ul>
+          <li><label for ="adminOrder">Order:</label></li>
+          <li><input type="number" value="" placeholder="Input order number" required></li>
           <li><label for="adminLogo">Logo URL:</label></li>
-          <li><input id='adminLogo' type="url" name="logo_img" value="" ></li>
+          <li><input id='adminLogo' type="url" name="logo_img" placeholder="http://..." value="" ></li>
           <li><label for="adminName">Name:</label></li>
           <li><input id='adminName' type="text" name="title" value="" required></li>
           <li><label for="adminEmail">Email:</label></li>
@@ -22,15 +24,6 @@
           <li><input id='adminURL' type="url" name="resource_url" value=""></li>
           <li><label for="adminDesc" id='desc'>Description</label></li>
           <li><textarea id='adminDesc' type="text" name="description" value="" required></textarea></li>
-          <li><label for ="adminImport">Importance:</label></li>
-          <li><select id="adminImport" required>
-            <option value =""hidden>Please select importance of Resource:</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select></li>
         </ul>
         <button type="submit">Add this resource</button>
       </fieldset>
