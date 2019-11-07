@@ -81,13 +81,6 @@ const adminRoute = process.env.ADMIN_ROUTE;
 // Make sure we do not set up the routes if ADMIN_ROUTE is not defined.
 if (adminRoute) {
   app.get(`/${adminRoute}`, getAdminView);
-  app.get(`/${adminRoute}/calendar`, getEventAdminList);
-  app.get(`/${adminRoute}/calendar/new`, getNewEventView);
-  app.get(`/${adminRoute}/calendar/edit`, getEditEventView);
-  app.get(`/${adminRoute}/calendar/delete`, getDeleteEventView);
-  app.post(`/${adminRoute}/calendar/new`, postNewEvent);
-  app.put(`/${adminRoute}/calendar/edit`, updateEvent);
-  app.delete(`/${adminRoute}/calendar/delete`, deleteEvent);
   app.get(`/${adminRoute}/resource`, getResourceAdminList);
   app.get(`/${adminRoute}/resource/new`, getNewResourceView);
   app.get(`/${adminRoute}/resource/edit/:id`, getEditResourceView);
@@ -95,8 +88,11 @@ if (adminRoute) {
   // TODO: This route may be redundant.  It would be for a confirmation prompt, but this can be done on the front end.
   app.get(`/${adminRoute}/resource/delete/:id`, getDeleteResourceView);
   app.post(`/${adminRoute}/resource/new`, postNewResource);
+  app.post(`/${adminRoute}/resource/edit/:id`, updateResourceForm);
   app.put(`/${adminRoute}/resource/edit/:id`, updateResource);
   app.delete(`/${adminRoute}/resource/delete/:id`, deleteResource);
+
+
 } else {
   console.log('no ADMIN_ROUTE .env value');
 }
@@ -154,16 +150,7 @@ function getCalendarItemDetail(req, res) {
 }
 
 function getAdminView(req, res) {
-  const sql = 'SELECT id, logo_img, title, email, resource_url,  description FROM resource ORDER BY title DESC;';
-
-  client
-    .query(sql)
-    .then(sqlResults => {
-      res.render('pages/admin', {
-        adminRoute: adminRoute,
-        resource: sqlResults.rows
-      });
-    })
+  res.render('pages/admin', { adminRoute: adminRoute })
     .catch(err => handleError(err, res));
 }
 
@@ -201,7 +188,6 @@ function getResourceAdminList(req, res) {
   client
     .query(sql)
     .then(sqlResults => {
-      // console.log('sql results', sqlResults.rows);
       res.render('pages/resource/list', {
         adminRoute: adminRoute,
         resource: sqlResults.rows
@@ -233,7 +219,6 @@ function postNewResource(req, res) {
     email,
     resource_url,
     description
-
   } = req.body;
   let values = [logo_img, title, email, resource_url, description];
 
@@ -241,22 +226,40 @@ function postNewResource(req, res) {
   client
     .query(sql, values)
     .then(sqlResults => {
-      getResourceAdminList(req, res);
+      res.redirect(`/${adminRoute}/resource`)
+
     })
     .catch(err => handleError(err, res));
 }
 
-function updateResource(req, res) {
-  let {logo_img, title, email, resource_url, description} = req.body;
-  let SQL = 'UPDATE resource SET logo_url=$1, title=$2, email=$3, resource_url=$4, description=$5, WHERE id=$6;';
-  let safeValues = [logo_img, title, email, resource_url, description];
+function updateResourceForm(req, res) {
+  let sql = `SELECT * FROM resource WHERE id=${req.params.id};`;
 
-  client.query(SQL, safeValues)
-    .then(() => {
-      res.redirect(`/${adminRoute}/resource`);
+  client.query(sql)
+    .then(selectedResource => {
+      let resource = selectedResource.rows[0];
+      console.log(resource);
+      res.render('pages/editResource', { resource: resource, adminRoute: adminRoute, });
     })
-    .catch(err => {console.error(err)});
+    .catch(err => handleError(err, res));
 }
+
+
+function updateResource(req, res) {
+
+  let newData = req.body;
+  let sql = `UPDATE resource SET logo_img=$1, title=$2, email=$3, resource_url=$4, description=$5 WHERE id=${req.params.id}`;
+  let safeValues = [newData.logo_img, newData.title, newData.email, newData.resource_url, newData.description];
+
+  client.query(sql, safeValues)
+    .then(results => {
+      console.log(`database updated`);
+      res.redirect(`/${adminRoute}/resource/`);
+    })
+    .catch(error => console.error(error));
+
+}
+
 
 function deleteResource(req, res) {
   let values = [req.params.id];
