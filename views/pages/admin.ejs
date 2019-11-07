@@ -6,40 +6,37 @@
 
   <%- include('../partials/header') %>
 
-  <h2 id="admin">Administration Page </h2></br></br>
-  <main>
-    <form action="<%= `/${adminRoute}/resource/new` %>" method="post">
-      <fieldset id="addResource">
-        <legend>Add a Resource:</legend></br>
-        <label for="importance">
-          <span>Importance:</span>
-          <input id='adminForm' type="number" name="importance" value="" required>
-        </label></br>
-        <label for="logo_img">
-          <span>Logo URL:</span>
-          <input id='adminForm' type="url" name="logo_img" value="" required>
-        </label></br>
-        <label for="title">
-          <span>Name:</span>
-          <input id='adminForm' type="text" name="title" value="" required>
-        </label></br>
-        <label for="email">
-          <span>Email:</span>
-          <input id='adminForm' type="email" name="email" value="" required>
-        </label></br>
-        <label for="resource_url">
-          <span>URL:</span>
-          <input id='adminForm' type="url" name="resource_url" value="">
-        </label></br>
-          <label for="description" id='desc'>
-            <span>Description:</span>
-            <input id='adminForm' type="text" name="description" value="" style="height:100px;" required>
-          </label></br>
+  <main class="admin-section">
+    <h2 id="admin">Administration Page </h2>
+    <form class="admin-form" action="<%= `/${adminRoute}/resource/new` %>" method="post">
+      <fieldset>
+        <legend>Add a Resource:</legend>
+        <ul>
+          <li><label for="adminLogo">Logo URL:</label></li>
+          <li><input id='adminLogo' type="url" name="logo_img" value="" ></li>
+          <li><label for="adminName">Name:</label></li>
+          <li><input id='adminName' type="text" name="title" value="" required></li>
+          <li><label for="adminEmail">Email:</label></li>
+          <li><input id='adminEmail' type="email" name="email" value="" required></li>
+          <li><label for="adminURL">URL:</label></li>
+          <li><input id='adminURL' type="url" name="resource_url" value=""></li>
+          <li><label for="adminDesc" id='desc'>Description</label></li>
+          <li><textarea id='adminDesc' type="text" name="description" value="" required></textarea></li>
+          <li><label for ="adminImport">Importance:</label></li>
+          <li><select id="adminImport" required>
+            <option value =""hidden>Please select importance of Resource:</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select></li>
+        </ul>
+        <button type="submit">Add this resource</button>
       </fieldset>
-      <button class='adminBtn' id ='add' type="submit">Add this resource</button>
     </form>
+  </main> 
     
     <%- include('../partials/footer') %>
-  </main>  
 </body>
 </html>

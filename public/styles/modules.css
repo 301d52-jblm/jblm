@@ -86,54 +86,71 @@ header nav a:hover {
     display:none;
 }
 
-.admin-section {
-    margin-top: 2em;
+.admin-section, .resource-section {
+    width: 80%;
+    margin: 2em auto;
+    text-align:center;
 }
 
-#admin, #addResource{
-    max-width:750px;
-    margin:auto;
-}
-#admin, h4{
+.admin-section h2, .resource-section h2{
     text-align:center;
     font-size: 25px;
     text-decoration: underline;
     color: #7F92B3;
 }
 
-#add{
-    margin-left:50%;
+.admin-form {
+    margin: 2em auto;
 }
 
-#adminForm{
-    border: 1px solid black;
-    width:80%;
-    margin:2vh;
+.admin-form ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 2em auto;
+    text-align: left;
 }
 
-.adminBtn{
-    border:1px solid black;
-    background-color: white;
-    border-radius: 10px;
+.admin-form ul li {
+    margin-bottom: 1em;
 }
 
-#admin, h4{
-    text-align:center;
-    font-size: 25px;
-    text-decoration: underline;
-    color: #7F92B3;
+.admin-form ul li:nth-child(odd) {
+    flex: 0 0 25%;
 }
 
-.resourcePage{
-    padding:5%;
+.admin-form ul li:nth-child(even) {
+    flex: 0 0 75%;
+}
+
+.admin-form ul li input, .admin-form ul li textarea {
+    width: 100%;
+}
+
+.admin-form ul li textarea {
+    height: 100px;
+}
+
+.resource-section {
+    text-align: left;
+}
+
+.resource-section ul  {
+    width: 50%;
+    margin: 2em auto;
+}
+
+#resources-request-form input {
+    width: 80%;
+}
+
+#resources-request-form textarea {
+    width: 80%;
+    height: 100px;
 }
 
 #response{
     padding:5vh;
-}
-
-#resources-request-form ul li {
-    margin-bottom: 1em;
 }
 
 .index-resources {
@@ -157,8 +174,40 @@ header nav a:hover {
     flex: 0 0 20%;
 }
 
+#resources-request-form ul li,
 #event-request-form ul li{
     margin-bottom: 1em;
+}
+
+#event-request-form input {
+    width: 100%;
+}
+
+#event-request-form textarea {
+    width: 100%;
+    height: 100px;
+}
+
+#event-request-form button, 
+#resources-request-form button,
+.admin-form button
+{
+    padding: 0.4em 1em 0.4em 1em;
+    background-color: #8E205E;
+    border: 0.5em solid #8E205E;
+    border-radius: 0.5em;
+    font-weight: bold;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+#event-request-form button:hover,
+#resources-request-form button:hover,
+.admin-form button:hover
+{
+    background-color: #660f40;
+    border: 0.5em solid #660f40;
 }
 
 /* CALENDAR PAGE STYLING END///////////// */
@@ -205,6 +254,8 @@ footer section:last-child p{
     line-height: 3em;
 }
 
+
+
 @media (max-width: 1000px) {
 
     header div:first-child,
@@ -248,6 +299,18 @@ footer section:last-child p{
         margin-bottom: 2em;
     }
 
+    .admin-form ul {
+        width: 100%;
+    }
+
+    .admin-form ul li:nth-child(odd) {
+        flex: 0 0 100%;
+    }
+    
+    .admin-form ul li:nth-child(even) {
+        flex: 0 0 100%;
+    }
+
     .calendar-section section:first-of-type {
         flex: 0 0 100%;
         text-align: center;
@@ -257,6 +320,10 @@ footer section:last-child p{
         flex: 0 0 100%;
         padding: 4em;
     }
+
+    .resource-section ul  {
+        width: 80%;
+    }    
 
     footer section:first-child{
         order: 5;
