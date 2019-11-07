@@ -12,7 +12,7 @@ function carouselInit() {
 function arrowHandler(event) {
   clearInterval(slideTimer);
   isAutoSlideStopped = true;
-  if(event.target.id === 'arrowLeft'){
+  if (event.target.id === 'arrowLeft') {
     slideDirection = 'left';
   } else {
     slideDirection = 'right';
@@ -29,7 +29,7 @@ function slideSwap() {
   let fadeout;
   let fadein;
   let slideNext;
-  if(slideDirection === 'right'){
+  if (slideDirection === 'right') {
     fadeout = 'fadeout-right';
     fadein = 'fadein-left';
     slideNext = slideCurrent === slides.length - 1 ? 0 : slideCurrent + 1;
@@ -41,7 +41,7 @@ function slideSwap() {
   slides[slideCurrent].classList.add(fadeout);
   slides[slideNext].classList.add(fadein);
   slides[slideNext].classList.remove('op0');
-  setTimeout(function(){
+  setTimeout(function () {
     slides[slideCurrent].className = '';
     slides[slideCurrent].classList.add('op0');
     slides[slideNext].className = '';
@@ -49,9 +49,12 @@ function slideSwap() {
     $('.arrow').on('click', arrowHandler);
     slideDirection = 'right';
   }, 600);
-  if(isAutoSlideStopped) {
+  if (isAutoSlideStopped) {
     isAutoSlideStopped = false;
     clearInterval(slideTimer);
     slideTimer = setTimeout(autoSwap, 1000);
   }
 }
+
+carouselInit();
+

@@ -132,10 +132,6 @@ header nav a:hover {
     padding:5vh;
 }
 
-#resources-request-form {
-    display: none;
-}
-
 #resources-request-form ul li {
     margin-bottom: 1em;
 }
@@ -166,7 +162,6 @@ header nav a:hover {
 }
 
 /* CALENDAR PAGE STYLING END///////////// */
-
 
 footer section:first-child {
     flex: 0 0 15%;
