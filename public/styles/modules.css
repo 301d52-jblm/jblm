@@ -136,7 +136,7 @@ header nav a:hover {
 }
 
 .resource-section ul  {
-    width: 50%;
+    width: 80%;
     margin: 2em auto;
 }
 
@@ -144,6 +144,7 @@ header nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-bottom: 2em;
 }
 
@@ -346,7 +347,11 @@ footer section:last-child p{
 
     .resource-section ul  {
         width: 80%;
-    }    
+    }
+
+    .resource-section ul li div {
+        flex: 0 0 100%;
+    }
 
     footer section:first-child{
         order: 5;
