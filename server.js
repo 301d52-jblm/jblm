@@ -52,7 +52,6 @@ app.get('/response', getResponse);
 app.post('/getLocation', getLocation);
 
 
-
 const adminRoute = process.env.ADMIN_ROUTE;
 
 // Make sure we do not set up the routes if ADMIN_ROUTE is not defined.
@@ -208,7 +207,7 @@ function sendEventEmail(request, response) {
     from: 'jblm.visitor@gmail.com',
     //insert multiple email addresses in the following format
     //`first@email.com;second@email.com;third@email.com`
-    to: `ravend17@gmail.com`,
+    to: `deborah.a.starr-calhoun.civ@mail.mil;mitchel.s.watson.civ@mail.mil`,
     subject: 'Please add my event to the Hawk Career Center calendar',
     text: `From: ${requester}\nEmail: ${requesterEmail}\nPhone Number: ${requesterPhone}\nEvent name: ${eventName}\nDate: ${date}\nTime: ${time}\nDescription: ${description}`
   };
@@ -238,7 +237,7 @@ function sendResourcesEmail(request, response) {
     from: 'jblm.visitor@gmail.com',
     //insert multiple email addresses in the following format
     //`first@email.com;second@email.com;third@email.com`
-    to: `ravend17@gmail.com`,
+    to: `deborah.a.starr-calhoun.civ@mail.mil;mitchel.s.watson.civ@mail.mil`,
     subject: 'Please add me to your HAWK Career Center Resources.',
     text: `From: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nLogo URL: ${logoURL}\nWebsite: ${siteURL}\nDescription: ${description}`
   };
