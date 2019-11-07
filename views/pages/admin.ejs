@@ -15,10 +15,14 @@
         - Use textarea element for description.
       -->
       <fieldset id="addResource">
-        <legend>Add a Resource:</legend>
+        <legend>Add a Resource:</legend></br>
+        <label for="importance">
+          <span>Importance:</span>
+          <input id='adminForm' type="number" name="importance" value="" required>
+        </label></br>
         <label for="logo_img">
           <span>Logo URL:</span>
-          <input id='adminForm' type="url" name="logo_img" value="" >
+          <input id='adminForm' type="url" name="logo_img" value="" required>
         </label></br>
         <label for="title">
           <span>Name:</span>
@@ -36,17 +40,6 @@
             <span>Description:</span>
             <input id='adminForm' type="text" name="description" value="" style="height:100px;" required>
           </label></br>
-          <label for ="Importance">
-          <span>Importance:</span>
-          <select required>
-            <option value =""hidden>Please select importance of Resource:</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select></br></br>
-        </label>
       </fieldset>
       <button class='adminBtn' id ='add' type="submit">Add this resource</button>
     </form>

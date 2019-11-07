@@ -130,7 +130,7 @@ function getCalendar(req, res) {
 }
 
 function getResources(req, res) {
-  const sql = 'SELECT id, logo_img, title, email, resource_url, description FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email, resource_url, description FROM resource ORDER BY importance ASC;';
 
   client
     .query(sql)
@@ -183,7 +183,7 @@ function deleteEvent(req, res) {
 }
 
 function getResourceAdminList(req, res) {
-  const sql = 'SELECT id, logo_img, title, email,resource_url, description FROM resource ORDER BY title DESC;';
+  const sql = 'SELECT id, logo_img, title, email,resource_url, description FROM resource ORDER BY importance ASC;';
 
   client
     .query(sql)
@@ -214,15 +214,16 @@ function getDeleteResourceView(req, res) {
 function postNewResource(req, res) {
 
   let {
+    importance,
     logo_img,
     title,
     email,
     resource_url,
     description
   } = req.body;
-  let values = [logo_img, title, email, resource_url, description];
+  let values = [importance, logo_img, title, email, resource_url, description];
 
-  let sql = 'INSERT INTO resource (logo_img, title, email, resource_url, description) VALUES($1, $2, $3, $4, $5);';
+  let sql = 'INSERT INTO resource (importance, logo_img, title, email, resource_url, description) VALUES($1, $2, $3, $4, $5, $6);';
   client
     .query(sql, values)
     .then(sqlResults => {
@@ -248,8 +249,8 @@ function updateResourceForm(req, res) {
 function updateResource(req, res) {
 
   let newData = req.body;
-  let sql = `UPDATE resource SET logo_img=$1, title=$2, email=$3, resource_url=$4, description=$5 WHERE id=${req.params.id}`;
-  let safeValues = [newData.logo_img, newData.title, newData.email, newData.resource_url, newData.description];
+  let sql = `UPDATE resource SET importance=$1, logo_img=$2, title=$3, email=$4, resource_url=$5, description=$6 WHERE id=${req.params.id}`;
+  let safeValues = [newData.importance, newData.logo_img, newData.title, newData.email, newData.resource_url, newData.description];
 
   client.query(sql, safeValues)
     .then(results => {

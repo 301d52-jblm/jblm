@@ -12,13 +12,13 @@
       <% resource.forEach(partner => { %>
 
       <li>
-        <img src="<%= partner.logo_png %>">
+        <img src="<%= partner.logo_img %>">
         <h5>&#9830;<%= partner.title %></h5>
         <a href="mailto:<%= partner.email %>"><%= partner.email %></a></br>
         <a href="<%= partner.resource_url %>"><%= partner.resource_url %></a>
-        <p><%= partner.description %></p>
+        <p><%= partner.description %></p></br>
         <p><%= partner.importance %></p>
-
+        
         </br></br>
 
         <form action="<%= `/${adminRoute}/resource/edit/${partner.id}` %>" method="post">
