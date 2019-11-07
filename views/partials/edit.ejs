@@ -1,7 +1,7 @@
-<form id="editPartial" action="<%= `/${adminRoute}/resource/new` %>" method="put">
+<form id="editPartial" action="<%= `/${adminRoute}/resource` %>" method="put">
   
+
   <fieldset>
-    <legend>Add a Resource</legend>
     <label for="logo_img">
       <span>Logo URL:</span>
       <input type="url" name="logo_img" value="" >
@@ -34,5 +34,5 @@
       </select></br></br>
     </label>
   </fieldset>
-  <button type="submit">Update Details</button>
+  <button id='update' type="submit">Update Details</button>
 </form>

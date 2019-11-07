@@ -1,11 +1,11 @@
-h1{
+header h1{
     color: white;
     font-family: 'Jomolhari', serif; 
     font-size: 2em;
     font-weight: bold;
 }
 
-h2 {
+header h2 {
     color: #7F92B3;
     font-size: 1.4em;
 }
@@ -20,7 +20,6 @@ header div:first-child img {
 
 header section {
     flex: 0 0 50%;
-
 }
 
 header nav {
@@ -84,93 +83,53 @@ header nav a:hover {
 }
 
 #editPartial{
-    visibility:hidden;
+    display:none;
+}
+
+.admin-section {
+    margin-top: 2em;
 }
 
 #admin, #addResource{
     max-width:750px;
     margin:auto;
 }
-input{
-    border: 1px solid black;
-    width:80%;
+#admin, h4{
+    text-align:center;
+    font-size: 25px;
+    text-decoration: underline;
+    color: #7F92B3;
 }
 
-button{
+#add{
+    margin-left:50%;
+}
+
+#adminForm{
+    border: 1px solid black;
+    width:80%;
+    margin:2vh;
+}
+
+.adminBtn{
     border:1px solid black;
     background-color: white;
     border-radius: 10px;
-
 }
 
-h4{
-    text-align: center;
-    margin-top:.75em;
-    font-size: 2em;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
-.rr{
-    margin-left: 5em;
-}
-.rt{
-    margin-top:5em;
-    /* margin-right: 5em; */
-
-}
-.dt{
-    margin-right: 5em;
-}
-#pdf{
-    margin-left: 1em;
-}
-
-@media (max-width: 959px) {
-    
-    /* because the iframes are rendered in an inline-element, use text-align center instead of margin auto */
-    .three-section-contents {
-        text-align: center;
-        padding: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.425);
-    }
-}
-
-@media (min-width: 960px) {
-    
-    iframe {
-        margin: auto;
-    }
-    #three-section-main {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    #left-section, #middle-section {
-        border-right: 1px solid black;
-    }
-    .three-section-contents {
-        padding: 10px;
-        height: 100%;
-        text-align: center;
-    }
-    .three-section {
-        width: 33.3%;
-    }
-    .fb-page {
-    margin: auto;
-    }
-
+#admin, h4{
+    text-align:center;
+    font-size: 25px;
+    text-decoration: underline;
+    color: #7F92B3;
 }
 
 .resourcePage{
     padding:5%;
 }
 
-#event-request-form {
-    width: 100px;
-    float: right;
-    margin-right: 100px;
+#response{
+    padding:5vh;
 }
 
 #resources-request-form {
@@ -185,20 +144,43 @@ h4{
     margin-top: 2em;
 }
 
+/* CALENDAR PAGE STYLING //////////////////////*/
+
+.calendar-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+}
+
+.calendar-section section:first-of-type {
+    flex: 0 0 70%;
+    text-align: center;
+}
+
+.calendar-section section:last-of-type {
+    flex: 0 0 20%;
+}
+
+#event-request-form ul li{
+    margin-bottom: 1em;
+}
+
+/* CALENDAR PAGE STYLING END///////////// */
+
+
 footer section:first-child {
     flex: 0 0 15%;
     text-align: center;
-    height: 100%;
     border-right: 1px solid #999999
 }
+
 footer section:first-child img {
     padding-right: 4em;
-    height: 100%;
+    height: 10vw;
 }
 
 footer section:last-child p{
     flex: 0 0 85%;
-    font-size: 1.2em;
     padding-left: 3em;
     margin-bottom: 0.5em;
     text-align: left;
@@ -206,6 +188,13 @@ footer section:last-child p{
 }
 
 #fbicon{
+    width:51px;
+    height:51px;
+    margin-right:.5em;
+    border-radius: 6px;
+}
+
+#calendericon{
     width:51px;
     height:51px;
     margin-right:.5em;
@@ -222,6 +211,36 @@ footer section:last-child p{
 }
 
 @media (max-width: 1000px) {
+
+    header div:first-child,
+    header section:first-child
+    {
+        flex: 0 0 50%;
+    }
+
+    header div:first-child {
+        text-align: center;
+    }
+    header div:first-child img {
+        width: 60%
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+    header h2 {
+        font-size: 1em;
+        color: #8E205E;
+    }
+    header nav {
+        flex: 0 0 100%;
+    }
+
+    header nav {
+        margin-top: 1.4em;
+        text-align: center;
+    }
+
     .main-columns section:first-child,
     .main-columns section:nth-child(2),
     .main-columns section:last-child
@@ -233,4 +252,32 @@ footer section:last-child p{
         margin-top: 2em;
         margin-bottom: 2em;
     }
+
+    .calendar-section section:first-of-type {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    
+    .calendar-section section:last-of-type {
+        flex: 0 0 100%;
+        padding: 4em;
+    }
+
+    footer section:first-child{
+        order: 5;
+        flex: 0 0 100%;
+        border: 0;
+        margin-top: 1em;
+    }
+    footer section:first-child img {
+        padding: 0;
+        height: 36vw;
+    }
+    footer section:last-child p{
+        flex: 0 0 100%;
+        text-align: center;
+        padding: 0;
+    }
 }
+
+
