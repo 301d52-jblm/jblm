@@ -9,17 +9,22 @@
 </head>
 
 <body>
-  <form action="<%= `/${adminRoute}/resource/edit/${resource.id}` %>" method="post">
-    <input type="hidden" name="_method" value="put">
-    <ul>
-      <input value="<%= resource.logo_img %>" name="logo_img" required>
-      <input value="<%= resource.title %>" name="title" required>
-      <input value="<%= resource.email %>" name="email" required>
-      <input value="<%= resource.resource_url %>" name="resource_url" required>
-      <input value="<%= resource.description %>" name="description" required>
-      <button type="submit">Update</button>
-    </ul>
-  </form>
-</body>
+  
+<form action="<%= `/${adminRoute}/resource/edit/${resource.id}` %>" method="post">
+  
+  <input type="hidden" name="_method" value="put">
+  <ul>
+    <input value="<%= resource.importance %>" name ="importance" required>
+    <input value="<%= resource.logo_img %>" name="logo_img" required>
+    <input value="<%= resource.title %>" name="title" required>
+    <input value="<%= resource.email %>" name="email" required>
+    <input value="<%= resource.resource_url %>" name="resource_url" required>
+    <input value="<%= resource.description %>" name="description" required>
+    <button type="submit">Update</button>
+  </ul>
+</form>
+
+
+
 
 </html>
