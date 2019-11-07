@@ -1,7 +1,7 @@
-<form id="editPartial" action="<%= `/${adminRoute}/resource` %>" method="put">
+<form id="editPartial" action="<%= `/${adminRoute}/resource/new` %>" method="put">
   
-
   <fieldset>
+    <legend>Add a Resource</legend>
     <label for="logo_img">
       <span>Logo URL:</span>
       <input type="url" name="logo_img" value="" >
@@ -25,7 +25,7 @@
       <label for ="Importance">
       <span>Importance:</span>
       <select required>
-        <option value =""hidden>Please select importance of Resource:</option>
+        <option value ="" hidden>Please select importance of Resource:</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
