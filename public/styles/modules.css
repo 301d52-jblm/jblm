@@ -140,6 +140,29 @@ header nav a:hover {
     margin: 2em auto;
 }
 
+.resource-section ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2em;
+}
+
+.resource-section ul li h5 {
+    font-size: 1.2em;
+    font-family: 'Jomolhari', serif;
+    font-weight: bold;
+}
+
+.resource-section ul li div {
+    flex: 0 0 50%;
+    padding: 1em;
+    line-height: 1.2em;
+}
+
+.resource-section img {
+    width: 100%;
+}
+
 #resources-request-form input {
     width: 80%;
 }
