@@ -1,4 +1,4 @@
-# Project JBML
+# Project JBLM
 # created by Will Huang, Lucas Wilber, Raven Delaney and Rosalyn Johnson
 
 # This project was started by Biniam Tesfamarian, Elle Young, Karina Chen, Jon Kimball per request of Deborah who works for the Hawk Career Center on JBLM. She wanted a web site where people could be connected to the facebook page, calender and other companies/individuals. This site is a place where people can learn more about the events, location, resources and other general info for the Hawk Center.
