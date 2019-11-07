@@ -6,7 +6,7 @@
 
   <%- include('../partials/header') %>
 
-  <h2 id="admin">Administration Page </h2>
+  <h2 id="admin">Administration Page </h2></br></br>
   <main>
     <form action="<%= `/${adminRoute}/resource/new` %>" method="post">
       <!-- TODO: MAKE DESCRIPTION BOX BIGGER; HAVE FORM SUBMISSION SEND TO DATABASE AND THEN RENDER TO RESOURCES.EJS -->
@@ -15,26 +15,26 @@
         - Use textarea element for description.
       -->
       <fieldset id="addResource">
-        <legend>Add a Resource</legend>
+        <legend>Add a Resource:</legend>
         <label for="logo_img">
           <span>Logo URL:</span>
-          <input type="url" name="logo_img" value="" >
+          <input id='adminForm' type="url" name="logo_img" value="" >
         </label></br>
         <label for="title">
           <span>Name:</span>
-          <input type="text" name="title" value="" required>
+          <input id='adminForm' type="text" name="title" value="" required>
         </label></br>
         <label for="email">
           <span>Email:</span>
-          <input type="email" name="email" value="" required>
+          <input id='adminForm' type="email" name="email" value="" required>
         </label></br>
         <label for="resource_url">
           <span>URL:</span>
-          <input type="url" name="resource_url" value="">
+          <input id='adminForm' type="url" name="resource_url" value="">
         </label></br>
           <label for="description" id='desc'>
             <span>Description:</span>
-            <input type="text" name="description" value="" style="height:100px;" required>
+            <input id='adminForm' type="text" name="description" value="" style="height:100px;" required>
           </label></br>
           <label for ="Importance">
           <span>Importance:</span>
@@ -48,7 +48,7 @@
           </select></br></br>
         </label>
       </fieldset>
-      <button id ='add' type="submit">Add this resource</button>
+      <button class='adminBtn' id ='add' type="submit">Add this resource</button>
     </form>
     
     <%- include('../partials/footer') %>
