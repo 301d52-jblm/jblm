@@ -1,3 +1,0 @@
-\c jblm;
-
-INSERT INTO resource (logo_img, title, email, resource_url, description) VALUES ('https://images.unsplash.com/photo-1522006815306-e2faf876640d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60', 'Recruit Military', 'recruit@military.mil', 'https://events.recruitmilitary.com/exhibitors/schedule', 'RecruitMilitary is a wholly-owned subsidiary of Bradley-Morris, Inc. (BMI), the largest military-focused recruiting company in the U.S.');
