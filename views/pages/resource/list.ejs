@@ -10,6 +10,7 @@
     <h4>Resources</h4>
     <ul>
       <% resource.forEach(partner => { %>
+
       <li>
         <img src="<%= partner.logo_png %>">
         <h5>&#9830;<%= partner.title %></h5>
@@ -17,11 +18,13 @@
         <a href="<%= partner.resource_url %>"><%= partner.resource_url %></a>
         <p><%= partner.description %></p>
         <p><%= partner.importance %></p>
+
         </br></br>
 
         <form action="<%= `/${adminRoute}/resource/edit/${partner.id}` %>" method="post">
           <button id="edit" type="submit">Edit Details</button>
         </form>
+
 
         </br></br>
         <!-- this should actually be a PUT with _method of delete after a confirmation prompt -->
@@ -30,6 +33,7 @@
           <button type="submit">Delete</button></br></br>
         </form>
       </li>
+
       <% }) %>
     </ul>
     </br></br></br>
