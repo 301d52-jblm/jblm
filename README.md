@@ -1,5 +1,23 @@
+# Project JBML
+# created by Will Huang, Lucas Wilber, Raven Delaney and Rosalyn Johnson
 
-Will, Lucas, Raven and Rosalyn
+# This project was started by Biniam Tesfamarian, Elle Young, Karina Chen, Jon Kimball per request of Deborah who works for the Hawk Career Center on JBLM. She wanted a web site where people could be connected to the facebook page, calender and other companies/individuals. This site is a place where people can learn more about the events, location, resources and other general info for the Hawk Center.
+
+# Problem Domain
+# The client wanted a site where users could get information about the Hawk Career Center. Many people on JBLM don't know where the hawk center is nor what they do/are about. This site solves this problem. It connects people to events, the location and any other information they could want about the Hawk Career Center.
+
+# version
+1.4.7
+
+# requires: cors, dotenv, ejs, express, fs, googleapi, googleapis, jquery, method-override, nodemailer, pg, readline and superagent
+
+
+# client will need access to the admin route. users will not need to download anything or get any other info before visiting.
+
+# API endpoints
+# user sees "Need directions? Input your location below:" in the footer and will put in their location. The API will recieve that location, put it into google maps. Then google maps is pulled up so that the location is the starting location with the destination as our clients address.
+
+
 
 
 
