@@ -136,8 +136,32 @@ header nav a:hover {
 }
 
 .resource-section ul  {
-    width: 50%;
+    width: 80%;
     margin: 2em auto;
+}
+
+.resource-section ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.resource-section ul li h5 {
+    font-size: 1.2em;
+    font-family: 'Jomolhari', serif;
+    font-weight: bold;
+}
+
+.resource-section ul li div {
+    flex: 0 0 50%;
+    padding: 1em;
+    line-height: 1.2em;
+}
+
+.resource-section img {
+    width: 100%;
 }
 
 #resources-request-form input {
@@ -323,7 +347,11 @@ footer section:last-child p{
 
     .resource-section ul  {
         width: 80%;
-    }    
+    }
+
+    .resource-section ul li div {
+        flex: 0 0 100%;
+    }
 
     footer section:first-child{
         order: 5;
