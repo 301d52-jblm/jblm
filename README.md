@@ -18,7 +18,7 @@
 # user sees "Need directions? Input your location below:" in the footer and will put in their location. The API will recieve that location, put it into google maps. Then google maps is pulled up so that the location is the starting location with the destination as our clients address.
 
 
-
+# Our database schema https://docs.google.com/document/d/1MukHVB-LZOWnPfO7P1QdaTiLC4MiVlq_EV5SQFoJbTI/edit?usp=sharing
 
 
 # Wire Fames
