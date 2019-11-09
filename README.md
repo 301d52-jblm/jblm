@@ -1,6 +1,23 @@
+# Project JBLM
+# created by Will Huang, Lucas Wilber, Raven Delaney and Rosalyn Johnson
 
-Will, Lucas, Raven and Rosalyn
+This project was started by Biniam Tesfamarian, Elle Young, Karina Chen, Jon Kimball per request of Deborah who works for the Hawk Career Center on JBLM. She wanted a web site where people could be connected to the facebook page, calender and other companies/individuals. This site is a place where people can learn more about the events, location, resources and other general info for the Hawk Center.
 
+# Problem Domain
+The client wanted a site where users could get information about the Hawk Career Center and the resources it provides. Many people on JBLM don't know where the Hawk CC is or what they do. This site helps solve this problem. It connects people to events, the location and any other information they could want about the Hawk Career Center.
+
+# version
+1.4.7
+
+# requires: dotenv, ejs, express, jquery, method-override, nodemailer, pg, and superagent
+
+# client will need access to the admin route. users will not need to download anything or get any other info before visiting.
+
+# API endpoints
+A visitor sees "Need directions? Input your location below:" in the footer and will put in their location. The back end will insert that information into an API call to geocode, and using the returned location info, redirect the visitor to a directions page with their location as the origin and the HAWK CC as the destination.
+
+
+# Our database schema https://docs.google.com/document/d/1MukHVB-LZOWnPfO7P1QdaTiLC4MiVlq_EV5SQFoJbTI/edit?usp=sharing
 
 
 # Wire Fames
@@ -80,7 +97,7 @@ A User can view the calender and facebook feed along with other information abou
 
 
 <!-- NON-FUNCTIONAL REQUIREMENTS -->
-<!-- Secure for the admin route so only those who have the link can change the calender. This means that the admin will be able to keep the calender the way they want it. Secure means that it will not be reachable by users. It will be a route that ONLY the admin will have a link to.
+<!-- Secure for the admin route so only those who have the link can change the calendar. This means that the admin will be able to keep the calender the way they want it. Secure means that it will not be reachable by users. It will be a route that ONLY the admin will have a link to.
 
 Usability so users can easily manuever the cite. Usability means that it is easy for people who have never been on the cite to know what all the features are right away. We want this cite to be for everyone interested in JBLM events. -->
 

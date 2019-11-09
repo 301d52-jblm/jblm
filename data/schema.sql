@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS resource CASCADE;
 CREATE TABLE resource (
   id SERIAL PRIMARY KEY,
+  importance INTEGER,
   logo_img varchar(255),
   title varchar(255),
   email varchar(255),
