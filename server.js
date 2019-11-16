@@ -3,7 +3,6 @@
 // ========== Dependencies ========== //
 const express = require('express');
 const pg = require('pg');
-const superagent = require('superagent');
 const methodOverride = require('method-override');
 const nodemailer = require('nodemailer');
 
@@ -253,15 +252,9 @@ function sendResourcesEmail(request, response) {
 
 function getLocation(request, response) {
   let location = request.body.location;
-
-  superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${process.env.LOCATION_API_KEY}`)
-    .then(resultsFromSuperagent => {
-      let yourAddress = resultsFromSuperagent.body.results[0].formatted_address;
-      let hawkAddress = '11577 41st Division Drive (Lewis North), Joint Base Lewis McChord, WA';
-      let directionsURL = `http://maps.google.com/maps?saddr="${yourAddress}"&daddr=${hawkAddress}`;
-      response.redirect(directionsURL);
-    })
-    .catch(error => console.error(error));
+  let hawkAddress = '11577 41st Division Drive (Lewis North), Joint Base Lewis McChord, WA';
+  let directionsURL = `http://maps.google.com/maps?saddr="${location}"&daddr=${hawkAddress}`;
+  response.redirect(directionsURL);
 }
 
 // ========== Error Function ========== //
